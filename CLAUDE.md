@@ -12,6 +12,20 @@ Website for **Sahasra Pure Veg**, a new pure vegetarian restaurant (client proje
 - Brand colors from the logo: teal (`#127089` approx.) for the wordmark, gold/mustard (`#D4A04A` approx.) for the lotus and ornaments, warm grey for "PURE VEG". Confirm exact values with the client's brand files before locking them in.
 - Next.js app not scaffolded yet. Once it is, list the stack and commands in Section 5.
 
+### Client details
+
+Use these exactly as written on the site (contact section, footer, structured data).
+
+- Restaurant: Sahasra Pure Veg
+- Company: ONEEAST FOODS
+- Address: Sy. No. 186-1 & 186-2, Near Commercial Tax Office, Kattamanchi, Tirupati Road, Chittoor, Andhra Pradesh 517001
+- Landmark: Near Commercial Tax Office
+- Mobile: +91 94411 66722
+- Email: sahasraveg@gmail.com
+- Website: sahasraveg.com
+- GSTIN: 37AAKFO0446Q1ZO
+- FSSAI Licence Number: 10126010000089
+
 ## 1. Think Before Coding
 
 **Don't assume. Don't hide confusion. Surface tradeoffs.**
