@@ -20,6 +20,7 @@ Use these exactly as written on the site (contact section, footer, structured da
 - Company: ONEEAST FOODS
 - Address: Sy. No. 186-1 & 186-2, Near Commercial Tax Office, Kattamanchi, Tirupati Road, Chittoor, Andhra Pradesh 517001
 - Landmark: Near Commercial Tax Office
+- Google Maps: https://maps.app.goo.gl/4JcqCk7UgbVTWZuY9 (coordinates 13.225468, 79.107003)
 - Mobile: +91 94411 66722
 - Email: sahasraveg@gmail.com
 - Website: sahasraveg.com
