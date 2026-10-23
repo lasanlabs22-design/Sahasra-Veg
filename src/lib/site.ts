@@ -29,8 +29,8 @@ export const site = {
 export const fullAddress = `${site.address.street}, ${site.address.city}, ${site.address.state} ${site.address.pin}`;
 
 export const nav = [
-  { href: "/#story", label: "Story" },
   { href: "/#menu", label: "Menu" },
+  { href: "/#story", label: "Our Story" },
   { href: "/#dining", label: "Dining" },
   { href: "/#hall", label: "Function Hall" },
   { href: "/#catering", label: "Catering" },

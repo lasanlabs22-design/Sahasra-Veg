@@ -1,33 +1,28 @@
 import type { Metadata, Viewport } from "next";
-import { Cinzel, Cormorant_Garamond, Manrope, Noto_Serif_Telugu } from "next/font/google";
+import { Fraunces, Instrument_Sans, Kalam } from "next/font/google";
 import FloatingContact from "@/components/FloatingContact";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
   style: ["normal", "italic"],
+  axes: ["SOFT", "WONK", "opsz"],
 });
 
-const cinzel = Cinzel({
-  variable: "--font-cinzel",
-  subsets: ["latin"],
-  weight: ["400", "500"],
-});
-
-const manrope = Manrope({
-  variable: "--font-manrope",
+const instrument = Instrument_Sans({
+  variable: "--font-instrument",
   subsets: ["latin"],
 });
 
-const notoTelugu = Noto_Serif_Telugu({
-  variable: "--font-noto-telugu",
-  subsets: ["telugu"],
-  weight: ["400", "500"],
+// Kalam is a handwriting face from the Indian Type Foundry.
+const kalam = Kalam({
+  variable: "--font-kalam",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -58,7 +53,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0b1f24",
+  themeColor: "#fbf4e6",
 };
 
 const jsonLd = {
@@ -87,7 +82,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${cinzel.variable} ${manrope.variable} ${notoTelugu.variable} antialiased`}
+      className={`${fraunces.variable} ${instrument.variable} ${kalam.variable} antialiased`}
     >
       <body className="font-sans">
         <script

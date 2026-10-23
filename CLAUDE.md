@@ -14,6 +14,9 @@ Website for **Sahasra Pure Veg**, a new pure vegetarian restaurant (client proje
 - All client details used on the site come from `src/lib/site.ts`. Keep it in sync with the list below.
 - Photos are Wikimedia Commons images under CC licences, registered with credits in `src/lib/photos.ts` and listed on `/photo-credits`. Any new photo must be verified as vegetarian and added there with its licence.
 - Site copy must not use em or en dashes, and must not invent facts (hours, prices, dishes) the client has not given.
+- Copy is English only (no Telugu on the site) and written in a warm, playful voice, not generic restaurant filler.
+- Use the logo exactly as supplied (`src/assets/brand/logo.png`, original colours, never recoloured or split), always on a light background.
+- Visual direction: Chittoor paper and craft (thoranam, kolam, menu book, invitation card, postcard). Prefer the custom SVG illustrations in `src/components/art.tsx` over amateur stock photos.
 
 ### Client details
 

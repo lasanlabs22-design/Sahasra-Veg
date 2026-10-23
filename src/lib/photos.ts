@@ -4,7 +4,6 @@ import chandragiri from "@/assets/photos/chandragiri.jpg";
 import dosa from "@/assets/photos/dosa.jpg";
 import fineDining from "@/assets/photos/fine-dining.jpg";
 import functionHall from "@/assets/photos/function-hall.jpg";
-import heroThali from "@/assets/photos/hero-andhra-thali.jpg";
 import idli from "@/assets/photos/idli.jpg";
 import kalamkari from "@/assets/photos/kalamkari.jpg";
 import northThali from "@/assets/photos/north-indian-thali.jpg";
@@ -26,16 +25,6 @@ type Photo = {
 // All photos are from Wikimedia Commons under the licences listed, resized for the web.
 // Credits are published on /photo-credits as the licences require.
 export const photos = {
-  heroThali: {
-    src: heroThali,
-    alt: "A vegetarian Andhra meal served in a brass thali with rice, curries, chutneys and sweets",
-    usedFor: "Home page hero",
-    title: "Vegetarian Andhra Meal",
-    author: "PriyaBooks",
-    license: "CC BY 2.0",
-    licenseUrl: "https://creativecommons.org/licenses/by/2.0",
-    source: "https://commons.wikimedia.org/wiki/File:Vegetarian_Andhra_Meal.jpg",
-  },
   idli: {
     src: idli,
     alt: "Soft idly and medu vada on a banana leaf with sambar and coconut chutney",

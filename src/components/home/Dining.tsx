@@ -1,47 +1,47 @@
 import Image from "next/image";
-import markLight from "@/assets/brand/mark-light.png";
-import { SectionHeading } from "@/components/ui";
+import { Kolam } from "@/components/art";
+import { Heading } from "@/components/ui";
 import { photos } from "@/lib/photos";
 
 export default function Dining() {
   return (
-    <section id="dining" className="kolam-light bg-ivory py-24 lg:py-32">
+    <section id="dining" className="bg-paper pb-24 lg:pb-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading eyebrow="Two Ways to Dine" title="Self Service & Fine Dining">
-          <p>However much time you have, there is a table for you at Sahasra.</p>
-        </SectionHeading>
+        <Heading kicker="so, what's the plan today?" title="Quick bite or long lunch?" align="center" className="mx-auto max-w-3xl" />
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-2">
-          <article className="reveal kolam-dark flex flex-col justify-between gap-12 rounded-3xl bg-teal-deep p-8 sm:p-12 lg:min-h-[28rem]">
-            <Image src={markLight} alt="" className="h-20 w-auto self-start opacity-90 sm:h-24" />
-            <div>
-              <p className="font-caps text-xs tracking-[0.4em] text-gold">Quick & Easy</p>
-              <h3 className="mt-3 font-display text-4xl text-cream sm:text-5xl">Self Service</h3>
-              <p className="mt-4 max-w-md text-lg leading-relaxed text-cream/75">
-                Order at the counter, collect your plate and enjoy it fresh off the tawa. Perfect for a quick
-                breakfast or a working lunch.
-              </p>
-            </div>
+        <div className="mt-14 grid overflow-hidden rounded-[2rem] shadow-[0_40px_80px_-40px_rgba(13,75,91,0.5)] lg:grid-cols-2">
+          <article className="reveal relative overflow-hidden bg-teal p-8 text-paper sm:p-12 lg:min-h-[30rem]">
+            <Kolam className="pointer-events-none absolute -bottom-24 -right-24 w-80 text-paper/15" />
+            <p className="font-display text-8xl font-semibold leading-none text-transparent [-webkit-text-stroke:1.5px_var(--color-turmeric)]">
+              01
+            </p>
+            <h3 className="font-display mt-8 text-4xl font-semibold sm:text-5xl">Self Service</h3>
+            <p className="mt-4 max-w-md text-lg leading-relaxed text-paper/85">
+              In a rush? Order at the counter, grab your plate and dig in while it is still sizzling. Perfect for
+              office lunches and school-run breakfasts.
+            </p>
           </article>
 
-          <article className="reveal relative flex min-h-[28rem] flex-col justify-end overflow-hidden rounded-3xl p-8 sm:p-12">
+          <article className="reveal relative flex min-h-[30rem] flex-col justify-end overflow-hidden p-8 text-paper sm:p-12">
             <Image
               src={photos.fineDining.src}
               alt={photos.fineDining.alt}
               fill
               placeholder="blur"
-              sizes="(min-width: 1024px) 45vw, 95vw"
+              sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/0" aria-hidden />
+            <div className="absolute inset-0 bg-gradient-to-t from-teal-ink via-teal-ink/55 to-transparent" aria-hidden />
             <div className="relative">
-              <p className="font-caps text-xs tracking-[0.4em] text-gold">Relaxed & Elegant</p>
-              <h3 className="mt-3 font-display text-4xl text-cream sm:text-5xl">Fine Dining</h3>
-              <p className="mt-4 max-w-md text-lg leading-relaxed text-cream/80">
-                Table service in a calm, graceful setting. Settle in with family and friends and let us bring
-                every course to you.
+              <p className="font-display text-8xl font-semibold leading-none text-transparent [-webkit-text-stroke:1.5px_var(--color-turmeric)]">
+                02
               </p>
-              <p className="mt-4 text-xs italic text-cream/50">Image for representation only.</p>
+              <h3 className="font-display mt-6 text-4xl font-semibold sm:text-5xl">Fine Dining</h3>
+              <p className="mt-4 max-w-md text-lg leading-relaxed text-paper/85">
+                Got time? Pull up a chair, bring the whole family, and let us bring every course to your table. No
+                hurry, no fuss.
+              </p>
+              <p className="mt-4 text-xs italic text-paper/55">Image for representation only.</p>
             </div>
           </article>
         </div>

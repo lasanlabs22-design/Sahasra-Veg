@@ -1,114 +1,124 @@
 import Image from "next/image";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
-import { FiMail, FiMapPin, FiNavigation, FiPhone } from "react-icons/fi";
-import { SectionHeading } from "@/components/ui";
+import { FiNavigation } from "react-icons/fi";
+import logo from "@/assets/brand/logo.png";
+import { Heading } from "@/components/ui";
 import { photos } from "@/lib/photos";
 import { site } from "@/lib/site";
 
 export default function Visit() {
+  const lines = [
+    "Sahasra Pure Veg",
+    "Sy. No. 186-1 & 186-2, Kattamanchi,",
+    "Tirupati Road, near Commercial Tax Office,",
+    `${site.address.city}, ${site.address.state} ${site.address.pin}`,
+  ];
   return (
-    <>
-      <section className="relative grid min-h-[60vh] place-items-center overflow-hidden px-4 py-24 text-center">
-        <Image
-          src={photos.chandragiri.src}
-          alt={photos.chandragiri.alt}
-          fill
-          placeholder="blur"
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-ink/65" aria-hidden />
-        <div className="reveal relative max-w-3xl">
-          <p className="font-caps text-xs tracking-[0.45em] text-gold">Chittoor, Andhra Pradesh</p>
-          <p className="mt-6 font-display text-4xl italic leading-tight text-cream sm:text-5xl lg:text-6xl">
-            From the land of temples, forts and mango groves.
-          </p>
-          <p className="mt-6 text-sm text-cream/60">Chandragiri Fort, near Tirupati</p>
-        </div>
-      </section>
+    <section id="visit" className="relative overflow-hidden bg-parchment py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <Heading kicker="find us" title="Come, sit, eat." />
 
-      <section id="visit" className="kolam-light bg-ivory py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading eyebrow="Find Us" title="Visit Sahasra">
-            <p>On Tirupati Road at Kattamanchi, near the Commercial Tax Office.</p>
-          </SectionHeading>
-
-          <div className="mt-16 grid gap-8 lg:grid-cols-[1fr_1.4fr]">
-            <div className="reveal rounded-3xl bg-ink p-8 text-cream sm:p-10">
-              <ul className="space-y-7">
-                <li className="flex gap-4">
-                  <FiMapPin className="mt-1 size-5 shrink-0 text-gold" aria-hidden />
-                  <div>
-                    <h3 className="font-caps text-xs tracking-[0.3em] text-gold">Address</h3>
-                    <p className="mt-2 leading-relaxed text-cream/80">
-                      {site.address.street},
-                      <br />
-                      {site.address.city}, {site.address.state} {site.address.pin}
-                    </p>
-                  </div>
-                </li>
-                <li className="flex gap-4">
-                  <FiPhone className="mt-1 size-5 shrink-0 text-gold" aria-hidden />
-                  <div>
-                    <h3 className="font-caps text-xs tracking-[0.3em] text-gold">Phone & WhatsApp</h3>
-                    <a href={site.phoneHref} className="mt-2 block text-cream/80 hover:text-gold">
-                      {site.phoneDisplay}
-                    </a>
-                  </div>
-                </li>
-                <li className="flex gap-4">
-                  <FiMail className="mt-1 size-5 shrink-0 text-gold" aria-hidden />
-                  <div>
-                    <h3 className="font-caps text-xs tracking-[0.3em] text-gold">Email</h3>
-                    <a href={`mailto:${site.email}`} className="mt-2 block break-all text-cream/80 hover:text-gold">
-                      {site.email}
-                    </a>
-                  </div>
-                </li>
-              </ul>
-
-              <div className="mt-10 flex flex-wrap gap-3">
-                <a
-                  href={site.mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 rounded-full bg-gold px-6 py-3 font-caps text-xs tracking-[0.2em] text-ink transition-colors hover:bg-gold-soft"
-                >
-                  <FiNavigation aria-hidden /> Get Directions
-                </a>
-                <a
-                  href={site.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  className="grid size-11 place-items-center rounded-full border border-gold/40 text-gold transition-colors hover:bg-gold hover:text-ink"
-                >
-                  <FaInstagram aria-hidden />
-                </a>
-                <a
-                  href={site.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  className="grid size-11 place-items-center rounded-full border border-gold/40 text-gold transition-colors hover:bg-gold hover:text-ink"
-                >
-                  <FaFacebookF aria-hidden />
-                </a>
+        <div className="mt-14 grid gap-10 lg:grid-cols-[1.35fr_1fr]">
+          {/* Picture postcard */}
+          <article className="reveal grid overflow-hidden rounded-md bg-paper shadow-[0_30px_60px_-30px_rgba(37,32,27,0.5)] sm:grid-cols-2 lg:-rotate-1">
+            <div className="relative min-h-72">
+              <Image
+                src={photos.chandragiri.src}
+                alt={photos.chandragiri.alt}
+                fill
+                placeholder="blur"
+                sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-teal-ink/85 via-teal-ink/20 to-transparent" aria-hidden />
+              <div className="absolute inset-x-0 bottom-0 p-5">
+                <p className="font-hand text-xl text-paper">Greetings from</p>
+                <p className="font-display text-5xl font-semibold leading-none text-turmeric [text-shadow:3px_3px_0_var(--color-kumkum)]">
+                  Chittoor
+                </p>
+                <p className="mt-2 text-xs text-paper/70">Chandragiri Fort, near Tirupati</p>
               </div>
             </div>
 
-            <div className="reveal min-h-[22rem] overflow-hidden rounded-3xl ring-1 ring-gold/40">
+            <div className="relative p-6 sm:p-7">
+              <div className="flex items-start justify-between gap-4">
+                <p className="font-hand text-lg text-kumkum">wish you were here!</p>
+                <div className="relative shrink-0">
+                  <div className="rotate-3 border-[5px] border-dotted border-paper bg-paper p-1.5 shadow ring-1 ring-brass/40">
+                    <Image src={logo} alt="" className="h-auto w-20" />
+                  </div>
+                  <svg viewBox="0 0 100 100" className="absolute -bottom-8 -left-10 w-20 text-kumkum/70" aria-hidden>
+                    <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="2" />
+                    <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" strokeWidth="1" />
+                    <text x="50" y="47" textAnchor="middle" fontSize="11" fill="currentColor" fontFamily="var(--font-instrument)" fontWeight="700">
+                      CHITTOOR
+                    </text>
+                    <text x="50" y="61" textAnchor="middle" fontSize="11" fill="currentColor" fontFamily="var(--font-instrument)">
+                      517001
+                    </text>
+                  </svg>
+                </div>
+              </div>
+              <address className="mt-8 not-italic">
+                {lines.map((l) => (
+                  <p key={l} className="font-hand border-b border-dashed border-stone/30 py-1.5 text-lg text-teal-ink">
+                    {l}
+                  </p>
+                ))}
+              </address>
+              <p className="mt-5 text-sm text-stone">
+                <a href={site.phoneHref} className="font-semibold text-teal-ink hover:text-teal">
+                  {site.phoneDisplay}
+                </a>
+                <span className="mx-2">·</span>
+                <a href={`mailto:${site.email}`} className="break-all hover:text-teal">
+                  {site.email}
+                </a>
+              </p>
+            </div>
+          </article>
+
+          <div className="reveal flex flex-col gap-4">
+            <div className="min-h-80 flex-1 overflow-hidden rounded-[2rem] border-4 border-paper shadow-lg">
               <iframe
                 src={site.mapsEmbed}
                 title="Map showing Sahasra Pure Veg, Chittoor"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="size-full min-h-[22rem] border-0"
+                className="size-full min-h-80 border-0"
               />
+            </div>
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href={site.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 rounded-full bg-teal px-6 py-3.5 font-semibold text-paper shadow-[0_5px_0_0_var(--color-teal-ink)] transition-transform hover:-translate-y-0.5"
+              >
+                <FiNavigation aria-hidden /> Get directions
+              </a>
+              <a
+                href={site.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Sahasra Pure Veg on Instagram"
+                className="grid size-12 place-items-center rounded-full bg-paper text-lg text-teal-ink shadow transition-colors hover:bg-teal-ink hover:text-paper"
+              >
+                <FaInstagram aria-hidden />
+              </a>
+              <a
+                href={site.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Sahasra Pure Veg on Facebook"
+                className="grid size-12 place-items-center rounded-full bg-paper text-lg text-teal-ink shadow transition-colors hover:bg-teal-ink hover:text-paper"
+              >
+                <FaFacebookF aria-hidden />
+              </a>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

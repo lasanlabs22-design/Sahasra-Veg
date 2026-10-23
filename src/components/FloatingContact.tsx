@@ -18,7 +18,7 @@ export default function FloatingContact() {
       <a
         href={site.phoneHref}
         aria-label={`Call Sahasra Pure Veg on ${site.phoneDisplay}`}
-        className="grid size-14 place-items-center rounded-full bg-gold text-ink shadow-lg shadow-black/25 ring-2 ring-white/70 transition-transform hover:scale-105"
+        className="grid size-14 place-items-center rounded-full bg-teal text-paper shadow-lg shadow-black/25 ring-2 ring-white/70 transition-transform hover:scale-105"
       >
         <FiPhone size={24} aria-hidden />
       </a>

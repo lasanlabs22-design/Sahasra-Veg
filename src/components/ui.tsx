@@ -1,58 +1,57 @@
-import Image from "next/image";
-import divider from "@/assets/brand/divider.png";
-import dividerLight from "@/assets/brand/divider-light.png";
+import Image, { type StaticImageData } from "next/image";
 
-// The gold ornament and rule from the logo, reused as a section divider.
-export function Divider({ light = false, className = "" }: { light?: boolean; className?: string }) {
-  return (
-    <Image
-      src={light ? dividerLight : divider}
-      alt=""
-      className={`mx-auto h-auto w-56 sm:w-72 ${className}`}
-    />
-  );
-}
-
-export function SectionHeading({
-  eyebrow,
-  title,
-  telugu,
-  light = false,
-  children,
+/* A round food photo set in a steel or brass plate rim. */
+export function Plate({
+  src,
+  alt,
+  rim = "steel",
+  sizes,
+  priority = false,
+  className = "",
 }: {
-  eyebrow: string;
-  title: string;
-  telugu?: string;
-  light?: boolean;
-  children?: React.ReactNode;
+  src: StaticImageData;
+  alt: string;
+  rim?: "steel" | "brass";
+  sizes: string;
+  priority?: boolean;
+  className?: string;
 }) {
   return (
-    <div className="reveal mx-auto max-w-2xl text-center">
-      <p className="font-caps text-xs tracking-[0.45em] text-gold">{eyebrow}</p>
-      <h2
-        className={`mt-4 font-display text-4xl font-medium leading-tight sm:text-5xl lg:text-6xl ${
-          light ? "text-cream" : "text-teal-deep"
-        }`}
-      >
-        {title}
-      </h2>
-      {telugu && (
-        <p lang="te" className={`mt-2 font-telugu text-lg ${light ? "text-gold-soft/70" : "text-stone/60"}`}>
-          {telugu}
-        </p>
-      )}
-      <Divider light={light} className="mt-6" />
-      {children && (
-        <div className={`mt-6 text-base leading-relaxed sm:text-lg ${light ? "text-cream/75" : "text-stone"}`}>
-          {children}
-        </div>
-      )}
+    <div
+      className={`${rim === "steel" ? "rim-steel" : "rim-brass"} rounded-full p-[3.5%] shadow-[0_30px_60px_-20px_rgba(37,32,27,0.45)] ${className}`}
+    >
+      <div className="relative aspect-square overflow-hidden rounded-full shadow-[inset_0_0_0_2px_rgba(0,0,0,0.08)]">
+        <Image src={src} alt={alt} fill sizes={sizes} placeholder="blur" priority={priority} className="object-cover" />
+      </div>
     </div>
   );
 }
 
-export function PhotoNote({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
+/* Section opener: handwritten kicker and display title. */
+export function Heading({
+  kicker,
+  title,
+  tone = "dark",
+  align = "left",
+  className = "",
+}: {
+  kicker: string;
+  title: React.ReactNode;
+  tone?: "dark" | "light";
+  align?: "left" | "center";
+  className?: string;
+}) {
+  const light = tone === "light";
   return (
-    <p className={`mt-3 text-xs italic ${light ? "text-cream/45" : "text-stone/60"}`}>{children}</p>
+    <div className={`reveal ${align === "center" ? "text-center" : ""} ${className}`}>
+      <p className={`font-hand text-xl ${light ? "text-turmeric" : "text-kumkum"}`}>{kicker}</p>
+      <h2
+        className={`font-display mt-1 text-5xl leading-[0.95] font-semibold tracking-tight sm:text-6xl lg:text-7xl ${
+          light ? "text-paper" : "text-teal-ink"
+        }`}
+      >
+        {title}
+      </h2>
+    </div>
   );
 }
