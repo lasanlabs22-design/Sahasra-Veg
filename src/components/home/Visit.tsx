@@ -66,7 +66,10 @@ export default function Visit() {
                   </p>
                 ))}
               </address>
-              <p className="mt-5 text-sm text-stone">
+              <p className="font-hand mt-4 text-lg text-kumkum">
+                open every day, {site.hours.display}
+              </p>
+              <p className="mt-2 text-sm text-stone">
                 <a href={site.phoneHref} className="font-semibold text-teal-ink hover:text-teal">
                   {site.phoneDisplay}
                 </a>

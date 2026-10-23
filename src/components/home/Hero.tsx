@@ -1,5 +1,8 @@
+import Image from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
-import { HandArrow, Kolam, LeafSpread, Thoranam, VegMark } from "@/components/art";
+import { HandArrow, Kolam, Thoranam, VegMark } from "@/components/art";
+import { Plate } from "@/components/ui";
+import { photos } from "@/lib/photos";
 import { site } from "@/lib/site";
 
 // Dish names, with a playful line in turmeric every few items.
@@ -13,6 +16,7 @@ const ticker: [string, boolean][] = [
   ["South Indian Meals", false],
   ["North Indian Meals", false],
   ["Pure veg, pure joy", true],
+  ["Open 6 AM to 10 PM", true],
 ];
 
 export default function Hero() {
@@ -34,7 +38,7 @@ export default function Hero() {
             </h1>
             <p className="rise mt-7 max-w-lg text-lg leading-relaxed text-stone" style={{ animationDelay: "200ms" }}>
               Pillow-soft idly at sunrise, a benne dosa whenever the craving hits, and full South and North Indian
-              meals at noon. Pure veg, made fresh, right here in Chittoor.
+              meals for lunch and dinner. Pure veg, made fresh, right here in Chittoor.
             </p>
             <div className="rise mt-9 flex flex-wrap items-center gap-4" style={{ animationDelay: "300ms" }}>
               <a
@@ -56,24 +60,43 @@ export default function Hero() {
               </a>
             </div>
             <p className="rise mt-8 flex items-center gap-2 text-sm text-stone" style={{ animationDelay: "400ms" }}>
-              <VegMark /> 100% pure veg. No exceptions, no compromises.
+              <VegMark /> 100% pure veg. Open every day, {site.hours.display}.
             </p>
           </div>
 
-          <div className="rise relative mx-auto aspect-square w-full max-w-[36rem]" style={{ animationDelay: "150ms" }}>
-            <Kolam className="spin-slow absolute inset-[-4%] text-teal/20" />
-            <LeafSpread className="relative size-full" />
-            <div className="absolute bottom-[7%] left-[6%] hidden items-end gap-1 text-kumkum sm:flex">
-              <p className="font-hand text-lg leading-tight">
-                crisp, golden,
-                <br />
-                made to order
-              </p>
-              <HandArrow className="mb-6 w-12 -scale-y-100" />
+          <div className="rise relative mx-auto w-full max-w-[30rem] pb-10 pl-6 sm:pl-10" style={{ animationDelay: "150ms" }}>
+            <Kolam className="spin-slow absolute -right-16 -top-10 w-[118%] text-teal/20" />
+            {/* Temple-arch frame with an offset brass outline. */}
+            <div className="absolute inset-0 bottom-10 left-6 translate-x-3 translate-y-3 rounded-t-full border-2 border-gold/70 sm:left-10" aria-hidden />
+            <div className="relative aspect-[4/5] overflow-hidden rounded-t-full rounded-b-3xl shadow-[0_40px_80px_-30px_rgba(13,75,91,0.6)]">
+              <Image
+                src={photos.heroDosa.src}
+                alt={photos.heroDosa.alt}
+                fill
+                priority
+                placeholder="blur"
+                sizes="(min-width: 1024px) 28rem, 85vw"
+                className="object-cover object-[50%_60%]"
+              />
             </div>
-            <div className="absolute right-[34%] top-[13%] hidden text-right text-kumkum sm:block">
-              <p className="font-hand text-lg leading-tight">softer than your pillow</p>
-              <HandArrow className="ml-auto mr-[-1rem] w-12" />
+            <Plate
+              src={photos.idli.src}
+              alt={photos.idli.alt}
+              priority
+              sizes="12rem"
+              className="absolute bottom-0 left-0 w-[38%] -rotate-6"
+            />
+            <div className="absolute -right-2 top-[18%] grid size-28 rotate-6 place-items-center rounded-full bg-turmeric text-center text-teal-ink shadow-xl sm:-right-6 sm:size-32">
+              <p className="leading-tight">
+                <span className="font-hand block text-base">open daily</span>
+                <span className="font-display block text-xl font-semibold">6 AM</span>
+                <span className="font-hand block text-sm">to</span>
+                <span className="font-display block text-xl font-semibold">10 PM</span>
+              </p>
+            </div>
+            <div className="absolute -bottom-2 left-[40%] hidden items-start gap-1 text-kumkum sm:flex">
+              <HandArrow className="w-12 rotate-[200deg]" />
+              <p className="font-hand mt-4 text-lg leading-tight">softer than your pillow</p>
             </div>
           </div>
         </div>

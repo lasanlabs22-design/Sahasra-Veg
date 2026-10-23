@@ -94,6 +94,7 @@ function Cover({ back = false }: { back?: boolean }) {
           <p className="relative mt-5 text-[0.7rem] font-semibold uppercase tracking-[0.4em] text-gold/80">
             Pure Vegetarian · Chittoor
           </p>
+          <p className="relative mt-2 text-sm text-paper/70">Open daily, 6 AM to 10 PM</p>
           <p className="font-hand relative mt-8 text-lg text-paper/70">tap to open</p>
         </>
       )}
@@ -117,10 +118,10 @@ const tiffinPlates = [
 
 const notes = [
   "Pure veg, 100% of the time. That is a promise.",
+  "Open every day, 6 AM to 10 PM. Dinner gets the same full menu.",
   "In a rush? Self service. Got time? Fine dining. Same great food.",
   "Less spicy, extra crispy? Just ask. Customisations are at the guest's own risk.",
   "Allergic to something? Tell us before you order.",
-  "Menu, varieties and prices may change with the season.",
   `Prices and today's specials: ask our team or call ${site.phoneDisplay}.`,
 ];
 
@@ -187,9 +188,9 @@ export const menuPages: { tab?: string; node: (side: Side) => React.ReactNode }[
           <line x1="10" y1="104" x2="310" y2="104" stroke="#9a6b1f" strokeOpacity="0.3" />
           {(
             [
-              ["Morning", 30, 98],
-              ["Afternoon", 160, 24],
-              ["Evening", 290, 98],
+              ["6 AM", 30, 98],
+              ["Noon", 160, 24],
+              ["10 PM", 290, 98],
             ] as const
           ).map(([label, x, y]) => (
             <g key={label}>
@@ -201,7 +202,7 @@ export const menuPages: { tab?: string; node: (side: Side) => React.ReactNode }[
           ))}
         </svg>
         <p className="mx-auto mt-3 max-w-xs text-center text-sm leading-relaxed text-stone">
-          Morning, noon or that sudden mid-afternoon craving: as long as our doors are open, the tawa is hot.
+          From 6 in the morning to 10 at night, the tawa never cools down. Breakfast, lunch, dinner or a sneaky 4 PM craving.
         </p>
         <ul className="mt-6 space-y-4">
           <Item name="Benne Dosa" tag="signature" text="The butter-crowned star of the house." />
@@ -215,7 +216,7 @@ export const menuPages: { tab?: string; node: (side: Side) => React.ReactNode }[
     tab: "Meals",
     node: (side) => (
       <Sheet side={side} folio={5} head="Meals">
-        <Title kicker="lunch, the proper way" title="South Indian Meals" />
+        <Title kicker="lunch & dinner, the proper way" title="South Indian Meals" />
         <div className="relative mx-auto mt-6 aspect-[4/3] w-full overflow-hidden rounded-lg shadow-lg ring-[6px] ring-white">
           <Image
             src={photos.southMeals.src}
@@ -248,7 +249,7 @@ export const menuPages: { tab?: string; node: (side: Side) => React.ReactNode }[
         <p className="mt-1 text-center text-sm leading-relaxed text-stone">
           Rotis · Dal · Seasonal sabzi · Rice · Raita · A sweet
         </p>
-        <p className="mt-auto text-center text-xs italic text-stone/70">Varieties change with the day and the season.</p>
+        <p className="mb-4 mt-auto text-center text-xs italic text-stone/70">Served at lunch and dinner. Varieties change with the season.</p>
       </Sheet>
     ),
   },

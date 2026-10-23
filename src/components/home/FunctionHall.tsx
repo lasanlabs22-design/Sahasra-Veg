@@ -34,6 +34,15 @@ export default function FunctionHall() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:flex lg:justify-end lg:px-8 lg:py-32">
+        {/* Polaroid of South Indian celebration decor, desktop only. */}
+        <figure className="reveal absolute bottom-24 left-8 hidden w-60 -rotate-6 bg-paper p-3 pb-4 shadow-2xl lg:block xl:left-16 xl:w-64">
+          <div className="relative aspect-[4/5] overflow-hidden">
+            <Image src={photos.hallDecor.src} alt={photos.hallDecor.alt} fill placeholder="blur" sizes="16rem" className="object-cover" />
+          </div>
+          <figcaption className="font-hand mt-3 text-center text-lg leading-tight text-kumkum">
+            marigolds, banana leaves, the works
+          </figcaption>
+        </figure>
         <div className="reveal relative -mt-24 w-full max-w-xl bg-parchment p-3 shadow-2xl sm:p-4 lg:mt-0">
           <div className="relative border-2 border-brass/70 p-1">
             <div className="relative border border-brass/50 px-6 py-12 text-center sm:px-12">

@@ -22,6 +22,7 @@ export const site = {
   mapsEmbed: "https://www.google.com/maps?q=13.225468,79.107003&z=16&output=embed",
   instagram: "https://www.instagram.com/sahasraveg/",
   facebook: "https://www.facebook.com/profile.php?id=61594774348811",
+  hours: { display: "6 AM to 10 PM", days: "Open every day", opens: "06:00", closes: "22:00" },
   gstin: "37AAKFO0446Q1ZO",
   fssai: "10126010000089",
 } as const;

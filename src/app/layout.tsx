@@ -75,6 +75,12 @@ const jsonLd = {
   },
   geo: { "@type": "GeoCoordinates", latitude: site.geo.lat, longitude: site.geo.lng },
   hasMap: site.mapsUrl,
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    opens: site.hours.opens,
+    closes: site.hours.closes,
+  },
   sameAs: [site.instagram, site.facebook],
 };
 

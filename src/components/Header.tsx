@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { FiMapPin, FiMenu, FiPhone, FiX } from "react-icons/fi";
+import { FiClock, FiMapPin, FiMenu, FiPhone, FiX } from "react-icons/fi";
 import logo from "@/assets/brand/logo.png";
 import { VegMark } from "@/components/art";
 import { nav, site } from "@/lib/site";
@@ -22,10 +22,17 @@ export default function Header() {
           <p className="flex items-center gap-2">
             <VegMark className="size-3.5" /> 100% Pure Vegetarian
           </p>
-          <p className="hidden items-center gap-2 md:flex">
+          <p className="flex items-center gap-2">
+            <FiClock className="text-gold" aria-hidden />
+            <span className="sm:hidden">{site.hours.display}</span>
+            <span className="hidden sm:inline">
+              {site.hours.days}, {site.hours.display}
+            </span>
+          </p>
+          <p className="hidden items-center gap-2 lg:flex">
             <FiMapPin className="text-gold" aria-hidden /> Tirupati Road, Kattamanchi, Chittoor
           </p>
-          <a href={site.phoneHref} className="flex items-center gap-2 hover:text-turmeric">
+          <a href={site.phoneHref} className="hidden items-center gap-2 hover:text-turmeric sm:flex">
             <FiPhone className="text-gold" aria-hidden /> {site.phoneDisplay}
           </a>
         </div>

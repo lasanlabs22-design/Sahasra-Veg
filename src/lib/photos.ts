@@ -4,11 +4,14 @@ import chandragiri from "@/assets/photos/chandragiri.jpg";
 import dosa from "@/assets/photos/dosa.jpg";
 import fineDining from "@/assets/photos/fine-dining.jpg";
 import functionHall from "@/assets/photos/function-hall.jpg";
+import hallDecor from "@/assets/photos/hall-decor.jpg";
+import heroDosa from "@/assets/photos/hero-masala-dosa.jpg";
 import idli from "@/assets/photos/idli.jpg";
 import kalamkari from "@/assets/photos/kalamkari.jpg";
 import northThali from "@/assets/photos/north-indian-thali.jpg";
 import pesarattu from "@/assets/photos/pesarattu.jpg";
 import pongal from "@/assets/photos/pongal.jpg";
+import selfService from "@/assets/photos/self-service.jpg";
 import southMeals from "@/assets/photos/south-indian-meals.jpg";
 
 type Photo = {
@@ -22,38 +25,38 @@ type Photo = {
   source: string;
 };
 
-// All photos are from Wikimedia Commons under the licences listed, resized for the web.
-// Credits are published on /photo-credits as the licences require.
+// Stock photos from Pexels and Wikimedia Commons under the licences listed, resized for the web.
+// They stand in for the client's own photography. Credits are published on /photo-credits.
 export const photos = {
   idli: {
     src: idli,
-    alt: "Soft idly and medu vada on a banana leaf with sambar and coconut chutney",
-    usedFor: "Breakfast: Idly",
-    title: "Idli and Medu Vada",
-    author: "OdetomyLife",
-    license: "CC BY-SA 4.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-    source: "https://commons.wikimedia.org/wiki/File:Idli_and_Medu_Vada.JPG",
+    alt: "Soft idlis topped with curry leaves on a banana leaf, with sambar and coconut chutney",
+    usedFor: "Menu: Idly",
+    title: "South Indian idli on banana leaves",
+    author: "Nifty Highness",
+    license: "Pexels License (free to use)",
+    licenseUrl: "https://www.pexels.com/license/",
+    source: "https://www.pexels.com/photo/31199041/",
   },
   dosa: {
     src: dosa,
-    alt: "A golden masala dosa on a banana leaf with sambar and coconut chutney",
-    usedFor: "Breakfast: Dosa",
-    title: "Mangalore Masal Dosa",
-    author: "Yakshitha",
-    license: "CC BY-SA 4.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-    source: "https://commons.wikimedia.org/wiki/File:Mangalore_Masal_Dosa.jpg",
+    alt: "A crisp triangular dosa with sambar and three chutneys",
+    usedFor: "Menu: Dosa",
+    title: "Crispy triangular dosa with chutneys and sambar",
+    author: "Jack Baghel",
+    license: "Pexels License (free to use)",
+    licenseUrl: "https://www.pexels.com/license/",
+    source: "https://www.pexels.com/photo/20422133/",
   },
   benneDosa: {
     src: benneDosa,
-    alt: "A crisp benne dosa topped with white butter, served with chutney and sambar",
-    usedFor: "Signature: Bangalore Benne Dosa",
-    title: "Butter Dosa",
-    author: "Srutiagarwal123",
-    license: "CC BY-SA 4.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-    source: "https://commons.wikimedia.org/wiki/File:Butter_Dosa.JPG",
+    alt: "Crisp golden benne dosas topped with butter, with chutneys and potato palya",
+    usedFor: "Menu: Bangalore Benne Dosa",
+    title: "Crispy dosas with chutneys and spiced potatoes",
+    author: "Smitha Nittur",
+    license: "Pexels License (free to use)",
+    licenseUrl: "https://www.pexels.com/license/",
+    source: "https://www.pexels.com/photo/39104603/",
   },
   pesarattu: {
     src: pesarattu,
@@ -78,44 +81,73 @@ export const photos = {
   },
   southMeals: {
     src: southMeals,
-    alt: "A South Indian meal on a banana leaf with rice, papad, curries and sweets",
-    usedFor: "Lunch: South Indian Meals",
-    title: "South indian meals 24",
-    author: "Swathi sri srinivasa raghavan",
-    license: "CC0 (public domain)",
-    licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
-    source: "https://commons.wikimedia.org/wiki/File:South_indian_meals_24.jpg",
+    alt: "A full vegetarian meal on a banana leaf with rice, papad, curries, pickles and payasam",
+    usedFor: "Menu: South Indian Meals",
+    title: "Traditional sadya on a banana leaf",
+    author: "Saveurs Secretes",
+    license: "Pexels License (free to use)",
+    licenseUrl: "https://www.pexels.com/license/",
+    source: "https://www.pexels.com/photo/5410418/",
   },
   northThali: {
     src: northThali,
-    alt: "A North Indian vegetarian thali with puri, roti, dal, curries and sweets",
-    usedFor: "Lunch: North Indian Meals",
-    title: "Traditional North Indian Thali",
-    author: "Shashank shk",
-    license: "CC BY-SA 4.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-    source: "https://commons.wikimedia.org/wiki/File:Traditional_North_Indian_Thali.jpg",
+    alt: "A vegetarian thali with chapati, rice, dal, bhindi and curd",
+    usedFor: "Menu: North Indian Meals",
+    title: "Indian vegetarian thali",
+    author: "Rajani33",
+    license: "Pexels License (free to use)",
+    licenseUrl: "https://www.pexels.com/license/",
+    source: "https://www.pexels.com/photo/35008222/",
   },
   fineDining: {
     src: fineDining,
-    alt: "An elegant dining room with round tables laid in white linen",
+    alt: "A calm restaurant interior with arched alcoves, brass pendant lamps and wooden chairs",
     usedFor: "Dining: Fine Dining (representative)",
-    title: "Restaurant room of Amantaka luxury Resort & Hotel in Luang Prabang Laos",
-    author: "Basile Morin",
-    license: "CC BY-SA 4.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-    source:
-      "https://commons.wikimedia.org/wiki/File:Restaurant_room_of_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg",
+    title: "Restaurant interior in Bengaluru",
+    author: "Prajwal",
+    license: "Pexels License (free to use)",
+    licenseUrl: "https://www.pexels.com/license/",
+    source: "https://www.pexels.com/photo/24499488/",
   },
   functionHall: {
     src: functionHall,
-    alt: "A banquet table laid for guests under a crystal chandelier",
+    alt: "An Indian banquet hall with a carved ceiling, chandeliers and rows of dressed chairs",
     usedFor: "Function Hall (representative)",
-    title: "Banquet Hall Nadiya hotel",
-    author: "Nadiaweb83",
-    license: "CC BY-SA 4.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
-    source: "https://commons.wikimedia.org/wiki/File:Banquet_Hall_Nadiya_hotel.jpg",
+    title: "Elegant hotel banquet hall",
+    author: "Lalit Jakhar",
+    license: "Pexels License (free to use)",
+    licenseUrl: "https://www.pexels.com/license/",
+    source: "https://www.pexels.com/photo/40143061/",
+  },
+  heroDosa: {
+    src: heroDosa,
+    alt: "A crisp masala dosa folded over potato masala, with coconut chutney and sambar on a banana leaf",
+    usedFor: "Home page hero",
+    title: "Masala dosa with coconut chutney and sambar",
+    author: "Saveurs Secretes",
+    license: "Pexels License (free to use)",
+    licenseUrl: "https://www.pexels.com/license/",
+    source: "https://www.pexels.com/photo/12392915/",
+  },
+  hallDecor: {
+    src: hallDecor,
+    alt: "A marigold and banana leaf backdrop for a South Indian celebration",
+    usedFor: "Function Hall decor (representative)",
+    title: "Marigold and banana leaf decoration",
+    author: "BANU FILM ADS",
+    license: "Pexels License (free to use)",
+    licenseUrl: "https://www.pexels.com/license/",
+    source: "https://www.pexels.com/photo/12718058/",
+  },
+  selfService: {
+    src: selfService,
+    alt: "Idli, vada, sambar and chutney served on a steel tray with filter coffee",
+    usedFor: "Dining: Self Service (representative)",
+    title: "South Indian breakfast tray",
+    author: "Preyansh patel",
+    license: "Pexels License (free to use)",
+    licenseUrl: "https://www.pexels.com/license/",
+    source: "https://www.pexels.com/photo/37867687/",
   },
   kalamkari: {
     src: kalamkari,

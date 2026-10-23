@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
-import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
+import { FiClock, FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 import logo from "@/assets/brand/logo.png";
 import { Skyline, VegMark } from "@/components/art";
 import { fullAddress, nav, site } from "@/lib/site";
@@ -57,6 +57,14 @@ export default function Footer() {
           <div>
             <h2 className="font-hand text-xl text-turmeric">say hello</h2>
             <ul className="mt-4 space-y-4 text-sm">
+              <li className="flex gap-3">
+                <FiClock className="mt-1 shrink-0 text-turmeric" aria-hidden />
+                <span>
+                  {site.hours.days}, {site.hours.display}
+                  <br />
+                  <span className="text-paper/55">Breakfast, lunch and dinner</span>
+                </span>
+              </li>
               <li className="flex gap-3">
                 <FiMapPin className="mt-1 shrink-0 text-turmeric" aria-hidden />
                 <a href={site.mapsUrl} target="_blank" rel="noopener noreferrer" className="hover:text-turmeric">

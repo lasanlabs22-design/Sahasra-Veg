@@ -12,9 +12,9 @@ export default function PhotoCredits() {
   return (
     <LegalPage title="Photo Credits" updated="23 October 2026">
       <p>
-        The photographs on this website come from Wikimedia Commons and are used under the free licences
-        listed below. They have been resized for the web. They are for representation only and do not show
-        our own dishes or premises.
+        The photographs on this website come from Pexels and Wikimedia Commons and are used under the free
+        licences listed below. They have been resized for the web. They are for representation only and do not
+        show our own dishes or premises.
       </p>
       <ul>
         {Object.values(photos).map((p) => (
