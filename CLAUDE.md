@@ -6,11 +6,14 @@ Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-s
 
 ## Project
 
-Website for **Sahasra Pure Veg**, a new pure vegetarian restaurant (client project). Built with Next.js.
+Website for **Sahasra Pure Veg**, a new pure vegetarian restaurant (client project).
 
-- Brand logo files live in `assets/logo/` (`sahasra-logo.png`, `sahasra-logo.jpg`).
-- Brand colors from the logo: teal (`#127089` approx.) for the wordmark, gold/mustard (`#D4A04A` approx.) for the lotus and ornaments, warm grey for "PURE VEG". Confirm exact values with the client's brand files before locking them in.
-- Next.js app not scaffolded yet. Once it is, list the stack and commands in Section 5.
+- Stack: Next.js 16 (App Router, Turbopack, Cache Components), React 19, TypeScript, Tailwind CSS v4, `react-icons`. npm.
+- Original logo files live in `assets/logo/`. Web variants (light logo, lotus mark, divider) are generated into `src/assets/brand/`.
+- Brand colors: teal `#127089`, gold `#D4A04A`, plus ink `#0B1F24` and ivory `#FAF6EE`. Tokens live in `src/app/globals.css`.
+- All client details used on the site come from `src/lib/site.ts`. Keep it in sync with the list below.
+- Photos are Wikimedia Commons images under CC licences, registered with credits in `src/lib/photos.ts` and listed on `/photo-credits`. Any new photo must be verified as vegetarian and added there with its licence.
+- Site copy must not use em or en dashes, and must not invent facts (hours, prices, dishes) the client has not given.
 
 ### Client details
 
@@ -24,6 +27,8 @@ Use these exactly as written on the site (contact section, footer, structured da
 - Mobile: +91 94411 66722
 - Email: sahasraveg@gmail.com
 - Website: sahasraveg.com
+- Instagram: https://www.instagram.com/sahasraveg/
+- Facebook: https://www.facebook.com/profile.php?id=61594774348811
 - GSTIN: 37AAKFO0446Q1ZO
 - FSSAI Licence Number: 10126010000089
 
@@ -85,9 +90,11 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 ## 5. Harness
 
-No automated test/type/lint harness yet. "Done" means the change renders correctly in a browser (verify with `/browse`) and the HTML is valid.
+- `npm run dev`: local dev server.
+- `npm run build`: production build, includes the TypeScript check. Must pass.
+- `npm run lint`: ESLint. Must be clean.
 
-Once Next.js is scaffolded, list the exact commands here (dev, build, lint, typecheck).
+No automated tests. "Done" means build and lint pass and the change renders correctly in a browser at desktop (1440px) and phone (390px) widths with no horizontal scroll.
 
 ## 6. Loops & Autonomy
 

@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+/* Brand palette sampled from the Sahasra logo, extended with deep ink and ivory for a premium feel. */
+@theme {
+  --color-ink: #0b1f24;
+  --color-ink-2: #10292f;
+  --color-teal: #127089;
+  --color-teal-deep: #0c4a5a;
+  --color-gold: #d4a04a;
+  --color-gold-soft: #e9cf98;
+  --color-ivory: #faf6ee;
+  --color-sand: #f1e7d6;
+  --color-cream: #f6efe2;
+  --color-stone: #5a5250;
+
+  --font-display: var(--font-cormorant), "Times New Roman", serif;
+  --font-caps: var(--font-cinzel), "Times New Roman", serif;
+  --font-sans: var(--font-manrope), system-ui, sans-serif;
+  --font-telugu: var(--font-noto-telugu), serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--color-ivory);
+  color: var(--color-ink);
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-ink);
+}
+
+/* Kolam dot grid, the threshold pattern drawn outside South Indian homes each morning. */
+.kolam-dark {
+  background-image: radial-gradient(rgb(212 160 74 / 0.14) 1px, transparent 1.6px);
+  background-size: 26px 26px;
+}
+.kolam-light {
+  background-image: radial-gradient(rgb(18 112 137 / 0.12) 1px, transparent 1.6px);
+  background-size: 26px 26px;
+}
+
+/* Temple-arch frame used for feature photos. */
+.arch {
+  border-radius: 999px 999px 1.25rem 1.25rem;
+}
+
+/* Entrance animation for the hero. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.rise {
+  animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* Scroll reveal where the browser supports scroll-driven animations; static elsewhere. */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: rise linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 55%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .rise,
+  .reveal {
+    animation: none;
+  }
+}
+
+/* Long-form legal pages. */
+.legal h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  line-height: 1.2;
+  color: var(--color-teal-deep);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+.legal p,
+.legal li {
+  color: var(--color-stone);
+  line-height: 1.75;
+}
+.legal p + p {
+  margin-top: 0.85rem;
+}
+.legal ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+}
+.legal li + li {
+  margin-top: 0.35rem;
+}
+.legal a {
+  color: var(--color-teal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
