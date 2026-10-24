@@ -10,16 +10,14 @@ export default function Catering() {
   return (
     <section id="catering" className="screen relative overflow-hidden bg-paper">
       <div className="mx-auto flex h-full max-w-7xl flex-col justify-center px-4 py-[clamp(1rem,4dvh,3rem)] sm:px-6 lg:grid lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-14 lg:px-8">
-        <div className="relative mx-auto hidden aspect-square h-[min(60dvh,26rem)] lg:block">
+        {/* On phones the art takes whatever height the copy leaves free. */}
+        <div className="relative mx-auto aspect-square min-h-24 max-lg:mb-4 max-lg:max-h-56 max-lg:flex-1 lg:h-[min(60dvh,26rem)]">
           <Kolam className="spin-slow absolute inset-0 text-turmeric/50" />
           <TiffinCarrier className="relative mx-auto h-full" />
         </div>
 
         <div>
-          <div className="flex items-end gap-3">
-            <TiffinCarrier className="mb-1 h-24 shrink-0 lg:hidden" />
-            <Heading kicker="can't come to us?" title="We'll come to you." />
-          </div>
+          <Heading kicker="can't come to us?" title="We'll come to you." />
           <p className="mt-4 max-w-xl text-[0.95rem] leading-relaxed text-stone sm:text-lg">
             Big fat wedding or a cosy housewarming, tell us the date and the headcount and we will bring
             Sahasra&apos;s kitchen to your celebration. No forms, no waiting. One call and it is sorted.

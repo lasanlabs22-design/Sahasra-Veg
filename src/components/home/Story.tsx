@@ -60,10 +60,11 @@ export default function Story() {
           </article>
 
           <figure className="grid items-center gap-4 rounded-[1.5rem] border border-brass/25 bg-paper/70 p-4 sm:p-6 lg:grid-cols-[1.7fr_1fr]">
-            <RegionMap className="h-auto w-full lg:hidden" labelScale={1.4} />
+            {/* Bigger labels on phones run past the edge places, so let them spill into the padding. */}
+            <RegionMap className="h-auto w-full overflow-visible lg:hidden" labelScale={1.4} />
             <RegionMap className="hidden h-auto max-h-[30dvh] w-full lg:block" />
             <figcaption className="flex items-center gap-4 lg:block">
-              <div className="relative size-20 shrink-0 overflow-hidden rounded-full ring-4 ring-paper lg:mb-3 lg:size-24">
+              <div className="relative size-24 shrink-0 overflow-hidden rounded-full ring-4 ring-paper lg:mb-3">
                 <Image src={photos.kalamkari.src} alt={photos.kalamkari.alt} fill sizes="6rem" placeholder="blur" className="object-cover" />
               </div>
               <p className="text-sm text-stone">

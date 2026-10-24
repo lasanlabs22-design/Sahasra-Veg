@@ -211,7 +211,8 @@ export default function MenuBook() {
         </div>
       </div>
 
-      <div className="relative flex shrink-0 items-center justify-center gap-6 pb-[clamp(0.5rem,2.5dvh,1.5rem)]">
+      {/* Right padding on phones keeps the page buttons clear of the floating call and WhatsApp buttons. */}
+      <div className="relative flex shrink-0 items-center justify-center gap-6 pb-[clamp(0.5rem,2.5dvh,1.5rem)] max-lg:pr-16">
         <button
           type="button"
           onClick={() => turn(-1)}
