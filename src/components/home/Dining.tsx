@@ -21,14 +21,14 @@ const ways = [
 export default function Dining() {
   return (
     <section id="dining" className="screen bg-paper">
-      <div className="mx-auto flex h-full max-w-7xl flex-col px-4 py-[clamp(1rem,4dvh,3rem)] sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-full max-w-7xl flex-col px-4 py-[clamp(1rem,4svh,3rem)] max-lg:py-12 sm:px-6 lg:px-8">
         <Heading kicker="so, what's the plan today?" title="Quick bite or long dinner?" align="center" className="shrink-0" />
-        <div className="mt-[clamp(0.75rem,3dvh,2.5rem)] flex min-h-0 flex-1 flex-col">
+        <div className="mt-[clamp(0.75rem,3svh,2.5rem)] flex min-h-0 flex-1 flex-col">
           <Panels labels={ways.map((w) => w.title)} className="lg:grid lg:grid-cols-2 lg:grid-rows-[minmax(0,1fr)] lg:gap-5">
             {ways.map((w) => (
               <article
                 key={w.n}
-                className="relative flex min-h-0 flex-1 flex-col justify-end overflow-hidden rounded-[1.75rem] p-6 text-paper sm:p-10"
+                className="relative flex min-h-0 flex-1 flex-col justify-end overflow-hidden rounded-[1.75rem] p-6 text-paper max-lg:min-h-[28rem] sm:p-10"
               >
                 <Image src={w.photo.src} alt={w.photo.alt} fill placeholder="blur" sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-teal-ink via-teal-ink/55 to-transparent" aria-hidden />

@@ -9,7 +9,7 @@ export default function Story() {
   return (
     <section id="story" className="screen relative overflow-hidden bg-parchment">
       <Kolam className="pointer-events-none absolute -right-40 -top-40 w-[34rem] text-brass/15" />
-      <div className="relative mx-auto flex h-full max-w-7xl flex-col px-4 py-[clamp(1rem,4dvh,3rem)] sm:px-6 lg:px-8">
+      <div className="relative mx-auto flex h-full max-w-7xl flex-col px-4 py-[clamp(1rem,4svh,3rem)] max-lg:py-12 sm:px-6 lg:px-8">
         <Panels
           labels={["Our story", "The name", "On the map"]}
           className="lg:grid lg:grid-cols-[0.8fr_1.2fr] lg:grid-rows-[auto_minmax(0,1fr)] lg:gap-x-14 lg:gap-y-6"
@@ -60,9 +60,14 @@ export default function Story() {
           </article>
 
           <figure className="grid items-center gap-4 rounded-[1.5rem] border border-brass/25 bg-paper/70 p-4 sm:p-6 lg:grid-cols-[1.7fr_1fr]">
-            {/* Bigger labels on phones run past the edge places, so let them spill into the padding. */}
-            <RegionMap className="h-auto w-full overflow-visible lg:hidden" labelScale={1.4} />
-            <RegionMap className="hidden h-auto max-h-[30dvh] w-full lg:block" />
+            {/*
+              Bigger labels on phones run past the edge places, so let them spill into the padding. The fixed-ratio
+              box lets content-visibility skip the pulsing pin while off screen.
+            */}
+            <div className="aspect-[5/2] px-2 [content-visibility:auto] lg:hidden">
+              <RegionMap className="h-auto w-full overflow-visible" labelScale={1.4} />
+            </div>
+            <RegionMap className="hidden h-auto max-h-[30svh] w-full lg:block" />
             <figcaption className="flex items-center gap-4 lg:block">
               <div className="relative size-24 shrink-0 overflow-hidden rounded-full ring-4 ring-paper lg:mb-3">
                 <Image src={photos.kalamkari.src} alt={photos.kalamkari.alt} fill sizes="6rem" placeholder="blur" className="object-cover" />

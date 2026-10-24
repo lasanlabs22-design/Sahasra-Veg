@@ -60,7 +60,7 @@ export default function Header() {
         <nav
           id="mobile-menu"
           aria-label="Mobile"
-          className="absolute inset-x-0 top-full h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-brass/20 bg-paper px-6 pb-10 pt-4 lg:hidden"
+          className="absolute inset-x-0 top-full h-[calc(100svh-4.5rem)] overflow-y-auto border-t border-brass/20 bg-paper px-6 pb-10 pt-4 lg:hidden"
         >
           <ul>
             {nav.map((item) => (

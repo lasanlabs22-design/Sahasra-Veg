@@ -19,7 +19,8 @@ export function Thoranam({ count = 45, className = "" }: { count?: number; class
   // Matches the quadratic string below: y(t) = 4 + 128 t (1 - t), in px because the SVG is 40px tall.
   const sag = (t: number) => 2 + 128 * t * (1 - t);
   return (
-    <div className={`pointer-events-none relative h-20 w-full sm:h-24 ${className}`} aria-hidden>
+    // Fixed size, so content-visibility can skip the swaying leaves while off screen without moving anything.
+    <div className={`pointer-events-none relative h-20 w-full [content-visibility:auto] sm:h-24 ${className}`} aria-hidden>
       <svg viewBox="0 0 1000 40" preserveAspectRatio="none" className="absolute inset-x-0 top-0 h-10 w-full">
         <path d="M0 4 Q500 68 1000 4" fill="none" stroke="#7a5320" strokeWidth="2" vectorEffect="non-scaling-stroke" />
       </svg>

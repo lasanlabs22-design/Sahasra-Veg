@@ -9,9 +9,8 @@ const occasions = ["Weddings", "Housewarmings", "Poojas", "Birthdays", "Office e
 export default function Catering() {
   return (
     <section id="catering" className="screen relative overflow-hidden bg-paper">
-      <div className="mx-auto flex h-full max-w-7xl flex-col justify-center px-4 py-[clamp(1rem,4dvh,3rem)] sm:px-6 lg:grid lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-14 lg:px-8">
-        {/* On phones the art takes whatever height the copy leaves free. */}
-        <div className="relative mx-auto aspect-square min-h-24 max-lg:mb-4 max-lg:max-h-56 max-lg:flex-1 lg:h-[min(60dvh,26rem)]">
+      <div className="mx-auto flex h-full max-w-7xl flex-col justify-center px-4 py-[clamp(1rem,4svh,3rem)] max-lg:py-12 sm:px-6 lg:grid lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-14 lg:px-8">
+        <div className="relative mx-auto aspect-square h-48 max-lg:mb-6 lg:h-[min(60svh,26rem)]">
           <Kolam className="spin-slow absolute inset-0 text-turmeric/50" />
           <TiffinCarrier className="relative mx-auto h-full" />
         </div>
@@ -30,7 +29,7 @@ export default function Catering() {
             ))}
           </ul>
 
-          <div className="mt-[clamp(1rem,3dvh,2rem)] rounded-[1.75rem] bg-teal-ink p-5 text-paper sm:p-7">
+          <div className="mt-[clamp(1rem,3svh,2rem)] rounded-[1.75rem] bg-teal-ink p-5 text-paper sm:p-7">
             <p className="font-hand text-base text-turmeric sm:text-lg">one call is all it takes</p>
             <a href={site.phoneHref} className="font-display block text-3xl font-semibold tracking-tight hover:text-turmeric sm:text-5xl">
               {site.phoneDisplay}

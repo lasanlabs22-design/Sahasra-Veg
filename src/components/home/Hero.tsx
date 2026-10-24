@@ -21,13 +21,13 @@ const ticker: [string, boolean][] = [
 
 export default function Hero() {
   return (
-    <section id="top" className="screen relative flex flex-col overflow-hidden">
+    <section id="top" className="screen screen-full relative flex flex-col overflow-hidden">
       <Thoranam className="shrink-0" />
       <div className="mx-auto flex min-h-0 w-full max-w-7xl flex-1 flex-col gap-4 px-4 pb-4 sm:px-6 lg:grid lg:grid-cols-[1.05fr_1fr] lg:grid-rows-[minmax(0,1fr)] lg:items-center lg:gap-8 lg:px-8">
         <div className="relative z-10 shrink-0">
           <p className="rise font-hand text-lg text-kumkum sm:text-2xl">have you eaten yet?</p>
           <h1
-            className="rise font-display mt-1 text-[clamp(2.2rem,min(8dvh,12vw),5.75rem)] leading-[0.92] font-semibold tracking-tight text-teal-ink"
+            className="rise font-display mt-1 text-[clamp(2.2rem,min(8svh,12vw),5.75rem)] leading-[0.92] font-semibold tracking-tight text-teal-ink"
             style={{ animationDelay: "100ms" }}
           >
             Come hungry.
@@ -36,13 +36,13 @@ export default function Hero() {
             </span>
           </h1>
           <p
-            className="rise mt-[clamp(0.75rem,2.5dvh,1.75rem)] max-w-lg text-[0.95rem] leading-relaxed text-stone sm:text-lg max-lg:[@media(max-height:740px)]:hidden"
+            className="rise mt-[clamp(0.75rem,2.5svh,1.75rem)] max-w-lg text-[0.95rem] leading-relaxed text-stone sm:text-lg max-lg:[@media(max-height:740px)]:hidden"
             style={{ animationDelay: "200ms" }}
           >
             Pillow-soft idly at sunrise, a benne dosa whenever the craving hits, and full South and North Indian
             meals for lunch and dinner. Pure veg, made fresh, right here in Chittoor.
           </p>
-          <div className="rise mt-[clamp(1rem,3dvh,2.25rem)] flex flex-wrap items-center gap-3" style={{ animationDelay: "300ms" }}>
+          <div className="rise mt-[clamp(1rem,3svh,2.25rem)] flex flex-wrap items-center gap-3" style={{ animationDelay: "300ms" }}>
             <a
               href="#menu"
               className="group rounded-full bg-teal px-6 py-3 text-sm font-semibold text-paper shadow-[0_5px_0_0_var(--color-teal-ink)] transition-transform hover:-translate-y-0.5 sm:px-8 sm:py-4 sm:text-base"
@@ -91,10 +91,10 @@ export default function Hero() {
             />
             <div className="absolute -right-[14%] top-[10%] grid aspect-square w-[34%] rotate-6 max-lg:hidden place-items-center rounded-full bg-turmeric text-center text-teal-ink shadow-xl">
               <p className="leading-tight">
-                <span className="font-hand block text-[clamp(0.65rem,1.6dvh,1rem)]">open daily</span>
-                <span className="font-display block text-[clamp(0.9rem,2.4dvh,1.35rem)] font-semibold">6 AM</span>
-                <span className="font-hand block text-[clamp(0.6rem,1.4dvh,0.85rem)]">to</span>
-                <span className="font-display block text-[clamp(0.9rem,2.4dvh,1.35rem)] font-semibold">10 PM</span>
+                <span className="font-hand block text-[clamp(0.65rem,1.6svh,1rem)]">open daily</span>
+                <span className="font-display block text-[clamp(0.9rem,2.4svh,1.35rem)] font-semibold">6 AM</span>
+                <span className="font-hand block text-[clamp(0.6rem,1.4svh,0.85rem)]">to</span>
+                <span className="font-display block text-[clamp(0.9rem,2.4svh,1.35rem)] font-semibold">10 PM</span>
               </p>
             </div>
           </div>
