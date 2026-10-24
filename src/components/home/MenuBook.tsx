@@ -110,14 +110,14 @@ export default function MenuBook() {
   const activeTab = menuPages.reduce((acc, p, i) => (p.tab && i <= Math.max(shownPage, 1) ? i : acc), 1);
 
   return (
-    <section id="menu" className="screen relative flex flex-col overflow-hidden bg-teal-ink text-paper">
+    <section id="menu" className="screen screen-full relative flex flex-col overflow-hidden bg-teal-ink text-paper">
       <Kolam className="pointer-events-none absolute left-1/2 top-1/2 w-[70rem] -translate-x-1/2 -translate-y-1/2 text-white/[0.04]" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_50%,rgba(242,184,71,0.16),transparent_70%)]" />
 
-      <div className="relative mx-auto flex w-full max-w-7xl shrink-0 flex-wrap items-end justify-between gap-x-6 gap-y-2 px-4 pt-[clamp(0.75rem,3dvh,2rem)] sm:px-6 lg:px-8">
+      <div className="relative mx-auto flex w-full max-w-7xl shrink-0 flex-wrap items-end justify-between gap-x-6 gap-y-2 px-4 pt-[clamp(0.75rem,3svh,2rem)] sm:px-6 lg:px-8">
         <div>
           <p className="font-hand text-lg text-turmeric">go on, open it</p>
-          <h2 className="font-display text-[clamp(1.9rem,5.5dvh,3.5rem)] leading-none font-semibold tracking-tight">Our Menu</h2>
+          <h2 className="font-display text-[clamp(1.9rem,5.5svh,3.5rem)] leading-none font-semibold tracking-tight">Our Menu</h2>
         </div>
         <div className="flex flex-wrap gap-2" role="tablist" aria-label="Menu sections">
           {menuPages.map((p, i) =>
@@ -139,7 +139,7 @@ export default function MenuBook() {
         </div>
       </div>
 
-      <div ref={areaRef} className="relative mx-4 my-[clamp(0.5rem,2.5dvh,1.5rem)] min-h-0 flex-1">
+      <div ref={areaRef} className="relative mx-4 my-[clamp(0.5rem,2.5svh,1.5rem)] min-h-0 flex-1">
         <div
           className="absolute left-1/2 top-1/2 select-none [perspective:2400px]"
           style={{ width: dim.w, height: dim.h, transform: `translate(-50%, -50%) scale(${scale})` }}
@@ -212,7 +212,7 @@ export default function MenuBook() {
       </div>
 
       {/* Right padding on phones keeps the page buttons clear of the floating call and WhatsApp buttons. */}
-      <div className="relative flex shrink-0 items-center justify-center gap-6 pb-[clamp(0.5rem,2.5dvh,1.5rem)] max-lg:pr-16">
+      <div className="relative flex shrink-0 items-center justify-center gap-6 pb-[clamp(0.5rem,2.5svh,1.5rem)] max-lg:pr-16">
         <button
           type="button"
           onClick={() => turn(-1)}

@@ -46,7 +46,7 @@ export function Heading({
     <div className={`reveal ${align === "center" ? "text-center" : ""} ${className}`}>
       <p className={`font-hand text-lg sm:text-xl ${light ? "text-turmeric" : "text-kumkum"}`}>{kicker}</p>
       <h2
-        className={`font-display mt-1 text-[clamp(2rem,min(6.5dvh,10vw),4.5rem)] leading-[0.95] font-semibold tracking-tight ${
+        className={`font-display mt-1 text-[clamp(2rem,min(6.5svh,10vw),4.5rem)] leading-[0.95] font-semibold tracking-tight ${
           light ? "text-paper" : "text-teal-ink"
         }`}
       >

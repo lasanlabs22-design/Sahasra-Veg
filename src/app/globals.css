@@ -26,17 +26,26 @@ html {
   scroll-padding-top: 4.5rem;
 }
 
-/* Home page: every section is exactly one screen under the 4.5rem header, and scrolling snaps between them. */
-.screen {
-  height: max(32rem, calc(100dvh - 4.5rem));
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+/*
+ * Home page. From the lg breakpoint every section is exactly one screen under the 4.5rem header, and
+ * scrolling snaps between them. Phones scroll freely and sections take their natural height, except
+ * .screen-full ones (hero, menu book), which stay one screen there too.
+ */
+.screen-full {
+  height: max(32rem, calc(100svh - 4.5rem));
 }
-html:has(.screen) {
-  scroll-snap-type: y mandatory;
-}
-html:has(.screen) footer {
-  scroll-snap-align: end;
+@media (width >= 64rem) {
+  .screen {
+    height: max(32rem, calc(100svh - 4.5rem));
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+  html:has(.screen) {
+    scroll-snap-type: y mandatory;
+  }
+  html:has(.screen) footer {
+    scroll-snap-align: end;
+  }
 }
 
 body {

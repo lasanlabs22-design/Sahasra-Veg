@@ -16,10 +16,10 @@ export default function Visit() {
   ];
   return (
     <section id="visit" className="screen relative overflow-hidden bg-parchment">
-      <div className="mx-auto flex h-full max-w-7xl flex-col px-4 py-[clamp(1rem,4dvh,3rem)] sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-full max-w-7xl flex-col px-4 py-[clamp(1rem,4svh,3rem)] max-lg:py-12 sm:px-6 lg:px-8">
         <Heading kicker="find us" title="Come, sit, eat." className="shrink-0" />
 
-        <div className="mt-[clamp(0.75rem,3dvh,2.5rem)] flex min-h-0 flex-1 flex-col">
+        <div className="mt-[clamp(0.75rem,3svh,2.5rem)] flex min-h-0 flex-1 flex-col">
           <Panels
             labels={["Address", "Map"]}
             className="lg:grid lg:grid-cols-[1.35fr_1fr] lg:grid-rows-[minmax(0,1fr)] lg:gap-10"
@@ -27,8 +27,7 @@ export default function Visit() {
           >
             {/* Picture postcard */}
             <article className="flex max-h-full flex-col overflow-hidden rounded-md bg-paper shadow-[0_30px_60px_-30px_rgba(37,32,27,0.5)] sm:grid sm:grid-cols-2 lg:-rotate-1">
-              {/* On phones the photo grows into whatever height the screen can spare. */}
-              <div className="relative h-[clamp(7rem,calc(100dvh-37rem),15rem)] shrink-0 sm:h-auto sm:min-h-64">
+              <div className="relative h-56 shrink-0 sm:h-auto sm:min-h-64">
                 <Image
                   src={photos.chandragiri.src}
                   alt={photos.chandragiri.alt}
@@ -87,7 +86,7 @@ export default function Visit() {
             </article>
 
             <div className="flex h-full min-h-0 flex-col gap-3">
-              <div className="min-h-0 flex-1 overflow-hidden rounded-[1.5rem] border-4 border-paper shadow-lg">
+              <div className="min-h-0 flex-1 overflow-hidden rounded-[1.5rem] border-4 border-paper shadow-lg max-lg:h-80 max-lg:flex-none">
                 <iframe
                   src={site.mapsEmbed}
                   title="Map showing Sahasra Pure Veg, Chittoor"

@@ -26,7 +26,7 @@ export default function FunctionHall() {
       </div>
 
       {/* Polaroid of South Indian celebration decor, desktop only. */}
-      <figure className="absolute bottom-10 left-8 hidden w-[min(15rem,24dvh)] -rotate-6 bg-paper p-2.5 pb-3 shadow-2xl lg:block xl:left-16">
+      <figure className="absolute bottom-10 left-8 hidden w-[min(15rem,24svh)] -rotate-6 bg-paper p-2.5 pb-3 shadow-2xl lg:block xl:left-16">
         <div className="relative aspect-[4/5] overflow-hidden">
           <Image src={photos.hallDecor.src} alt={photos.hallDecor.alt} fill placeholder="blur" sizes="15rem" className="object-cover" />
         </div>
@@ -43,14 +43,14 @@ export default function FunctionHall() {
       <div className="relative mx-auto flex h-full max-w-7xl items-center justify-center px-4 pb-8 pt-14 sm:px-6 lg:justify-end lg:px-8 lg:pr-16 lg:pt-16">
         <div className="max-h-full w-full max-w-lg bg-parchment p-2 shadow-2xl sm:p-3">
           <div className="border-2 border-brass/70 p-1">
-            <div className="relative border border-brass/50 px-5 py-6 text-center sm:px-10 sm:py-[clamp(1.25rem,4dvh,2.5rem)] [@media(max-height:720px)]:py-4">
+            <div className="relative border border-brass/50 px-5 py-6 text-center sm:px-10 sm:py-[clamp(1.25rem,4svh,2.5rem)] [@media(max-height:720px)]:py-4">
               <CornerOrnament className="absolute left-1.5 top-1.5 w-8 text-brass sm:w-10" />
               <CornerOrnament className="absolute right-1.5 top-1.5 w-8 rotate-90 text-brass sm:w-10" />
               <CornerOrnament className="absolute bottom-1.5 right-1.5 w-8 rotate-180 text-brass sm:w-10" />
               <CornerOrnament className="absolute bottom-1.5 left-1.5 w-8 -rotate-90 text-brass sm:w-10" />
 
               <p className="font-hand text-base text-kumkum sm:text-lg">you&apos;re invited to celebrate at</p>
-              <h2 className="font-display mt-1 text-[clamp(1.8rem,5dvh,3rem)] font-semibold leading-tight text-teal-ink">
+              <h2 className="font-display mt-1 text-[clamp(1.8rem,5svh,3rem)] font-semibold leading-tight text-teal-ink">
                 The Sahasra <br className="hidden sm:block [@media(max-height:720px)]:hidden" />
                 Function Hall
               </h2>
