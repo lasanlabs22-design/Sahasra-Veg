@@ -36,7 +36,7 @@ export default function Hero() {
             </span>
           </h1>
           <p
-            className="rise mt-[clamp(0.75rem,2.5dvh,1.75rem)] max-w-lg text-[0.95rem] leading-relaxed text-stone sm:text-lg"
+            className="rise mt-[clamp(0.75rem,2.5dvh,1.75rem)] max-w-lg text-[0.95rem] leading-relaxed text-stone sm:text-lg max-lg:[@media(max-height:740px)]:hidden"
             style={{ animationDelay: "200ms" }}
           >
             Pillow-soft idly at sunrise, a benne dosa whenever the craving hits, and full South and North Indian
@@ -56,7 +56,7 @@ export default function Hero() {
               href={site.whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-full border-2 border-teal-ink/80 px-5 py-2.5 text-sm font-semibold text-teal-ink transition-colors hover:bg-teal-ink hover:text-paper sm:px-7 sm:py-[0.85rem] sm:text-base"
+              className="flex items-center gap-2 rounded-full border-2 border-teal-ink/80 px-5 py-2.5 max-sm:hidden text-sm font-semibold text-teal-ink transition-colors hover:bg-teal-ink hover:text-paper sm:px-7 sm:py-[0.85rem] sm:text-base"
             >
               <FaWhatsapp aria-hidden className="text-lg" /> WhatsApp
             </a>
@@ -66,10 +66,10 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* The photo takes whatever height is left, so the hero always fits one screen. */}
+        {/* The photo takes whatever height is left, so the hero always fits one screen. On phones it goes wide to fill the width. */}
         <div className="rise relative flex min-h-0 flex-1 items-center justify-center lg:h-full" style={{ animationDelay: "150ms" }}>
           <Kolam className="spin-slow absolute left-1/2 top-1/2 h-[115%] -translate-x-1/2 -translate-y-1/2 text-teal/20" />
-          <div className="relative aspect-[4/5] h-full max-h-[36rem] max-w-full">
+          <div className="relative aspect-[5/4] h-full max-h-[36rem] max-w-full lg:aspect-[4/5]">
             <div className="absolute inset-0 translate-x-2.5 translate-y-2.5 rounded-t-full border-2 border-gold/70" aria-hidden />
             <div className="absolute inset-0 overflow-hidden rounded-t-full rounded-b-3xl shadow-[0_40px_80px_-30px_rgba(13,75,91,0.6)]">
               <Image
@@ -78,7 +78,7 @@ export default function Hero() {
                 fill
                 priority
                 placeholder="blur"
-                sizes="(min-width: 1024px) 28rem, 60vw"
+                sizes="(min-width: 1024px) 28rem, 100vw"
                 className="object-cover object-[50%_60%]"
               />
             </div>
@@ -87,7 +87,7 @@ export default function Hero() {
               alt={photos.idli.alt}
               priority
               sizes="12rem"
-              className="absolute -bottom-[3%] -left-[16%] w-[42%] -rotate-6"
+              className="absolute -bottom-[3%] -left-[4%] w-[36%] -rotate-6 lg:-left-[16%] lg:w-[42%]"
             />
             <div className="absolute -right-[14%] top-[10%] grid aspect-square w-[34%] rotate-6 max-lg:hidden place-items-center rounded-full bg-turmeric text-center text-teal-ink shadow-xl">
               <p className="leading-tight">

@@ -27,7 +27,8 @@ export default function Visit() {
           >
             {/* Picture postcard */}
             <article className="flex max-h-full flex-col overflow-hidden rounded-md bg-paper shadow-[0_30px_60px_-30px_rgba(37,32,27,0.5)] sm:grid sm:grid-cols-2 lg:-rotate-1">
-              <div className="relative h-28 shrink-0 sm:h-auto sm:min-h-64">
+              {/* On phones the photo grows into whatever height the screen can spare. */}
+              <div className="relative h-[clamp(7rem,calc(100dvh-37rem),15rem)] shrink-0 sm:h-auto sm:min-h-64">
                 <Image
                   src={photos.chandragiri.src}
                   alt={photos.chandragiri.alt}

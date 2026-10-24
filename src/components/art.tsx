@@ -155,10 +155,13 @@ export function RotatingSeal({ text, className = "", children }: { text: string;
 /* Brass tiffin carrier for catering. */
 export function TiffinCarrier({ className = "" }: { className?: string }) {
   const tiers = [96, 160, 224];
+  // Unique per instance: a page can show two carriers, and a hidden one must not own the gradient.
+  const brass = useId();
+  const fill = `url(#${brass})`;
   return (
     <svg viewBox="0 0 240 320" className={className} aria-hidden>
       <defs>
-        <linearGradient id="brass" x1="0" x2="1">
+        <linearGradient id={brass} x1="0" x2="1">
           <stop offset="0" stopColor="#8f6119" />
           <stop offset="0.28" stopColor="#f3d27a" />
           <stop offset="0.5" stopColor="#d4a04a" />
@@ -180,13 +183,13 @@ export function TiffinCarrier({ className = "" }: { className?: string }) {
           opacity="0.6"
         />
       ))}
-      <path d="M86 70 C86 34 154 34 154 70" stroke="url(#brass)" strokeWidth="9" fill="none" />
-      <rect x="38" y="62" width="10" height="230" rx="4" fill="url(#brass)" />
-      <rect x="192" y="62" width="10" height="230" rx="4" fill="url(#brass)" />
-      <rect x="34" y="62" width="172" height="14" rx="6" fill="url(#brass)" />
+      <path d="M86 70 C86 34 154 34 154 70" stroke={fill} strokeWidth="9" fill="none" />
+      <rect x="38" y="62" width="10" height="230" rx="4" fill={fill} />
+      <rect x="192" y="62" width="10" height="230" rx="4" fill={fill} />
+      <rect x="34" y="62" width="172" height="14" rx="6" fill={fill} />
       {tiers.map((y) => (
         <g key={y}>
-          <rect x="56" y={y - 14} width="128" height="62" rx="10" fill="url(#brass)" />
+          <rect x="56" y={y - 14} width="128" height="62" rx="10" fill={fill} />
           <rect x="52" y={y - 18} width="136" height="10" rx="5" fill="#b8862b" />
           <path d={`M60 ${y + 24} H180`} stroke="#fff6d6" strokeWidth="2" opacity="0.45" />
         </g>
