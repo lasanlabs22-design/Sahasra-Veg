@@ -7,75 +7,72 @@ import { photos } from "@/lib/photos";
 import { site } from "@/lib/site";
 
 const details = [
-  ["75", "of your favourite people"],
-  ["AC", "cool, whatever the weather"],
+  ["75", "guests seated"],
+  ["AC", "air-conditioned"],
   ["Veg", "menus from our kitchen"],
-  ["Your way", "decor and menu on request"],
+  ["Custom", "decor and menu"],
 ];
 
 export default function FunctionHall() {
   return (
-    <section id="hall" className="relative overflow-hidden bg-teal-ink">
-      {/* Phones: photo on top. Desktop: photo fills the section behind the card. */}
-      <div className="relative h-80 sm:h-[26rem] lg:absolute lg:inset-0 lg:h-auto">
-        <Image
-          src={photos.functionHall.src}
-          alt={photos.functionHall.alt}
-          fill
-          placeholder="blur"
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-teal-ink/60 via-transparent to-teal-ink lg:bg-gradient-to-r lg:from-transparent lg:via-teal-ink/20 lg:to-teal-ink/90" aria-hidden />
-        <Thoranam count={41} className="absolute inset-x-0 top-0" />
-        <p className="absolute bottom-3 left-4 text-xs italic text-paper/70 lg:bottom-6 lg:left-8">
-          Image for representation only.
-        </p>
+    <section id="hall" className="screen relative overflow-hidden bg-teal-ink">
+      <Image src={photos.functionHall.src} alt={photos.functionHall.alt} fill placeholder="blur" sizes="100vw" className="object-cover" />
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-teal-ink/40 via-teal-ink/30 to-teal-ink/85 lg:bg-gradient-to-r lg:from-transparent lg:via-teal-ink/20 lg:to-teal-ink/90"
+        aria-hidden
+      />
+      <div className="absolute inset-x-0 top-0">
+        <Thoranam />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:flex lg:justify-end lg:px-8 lg:py-32">
-        {/* Polaroid of South Indian celebration decor, desktop only. */}
-        <figure className="reveal absolute bottom-24 left-8 hidden w-60 -rotate-6 bg-paper p-3 pb-4 shadow-2xl lg:block xl:left-16 xl:w-64">
-          <div className="relative aspect-[4/5] overflow-hidden">
-            <Image src={photos.hallDecor.src} alt={photos.hallDecor.alt} fill placeholder="blur" sizes="16rem" className="object-cover" />
-          </div>
-          <figcaption className="font-hand mt-3 text-center text-lg leading-tight text-kumkum">
-            marigolds, banana leaves, the works
-          </figcaption>
-        </figure>
-        <div className="reveal relative -mt-24 w-full max-w-xl bg-parchment p-3 shadow-2xl sm:p-4 lg:mt-0">
-          <div className="relative border-2 border-brass/70 p-1">
-            <div className="relative border border-brass/50 px-6 py-12 text-center sm:px-12">
-              <CornerOrnament className="absolute left-2 top-2 w-12 text-brass" />
-              <CornerOrnament className="absolute right-2 top-2 w-12 rotate-90 text-brass" />
-              <CornerOrnament className="absolute bottom-2 right-2 w-12 rotate-180 text-brass" />
-              <CornerOrnament className="absolute bottom-2 left-2 w-12 -rotate-90 text-brass" />
+      {/* Polaroid of South Indian celebration decor, desktop only. */}
+      <figure className="absolute bottom-10 left-8 hidden w-[min(15rem,24dvh)] -rotate-6 bg-paper p-2.5 pb-3 shadow-2xl lg:block xl:left-16">
+        <div className="relative aspect-[4/5] overflow-hidden">
+          <Image src={photos.hallDecor.src} alt={photos.hallDecor.alt} fill placeholder="blur" sizes="15rem" className="object-cover" />
+        </div>
+        <figcaption className="font-hand mt-2 text-center text-base leading-tight text-kumkum">marigolds, banana leaves, the works</figcaption>
+      </figure>
+      <p className="absolute inset-x-4 bottom-2 text-center text-[0.65rem] leading-snug text-paper/80 lg:left-auto lg:right-8 lg:text-right">
+        Decor and menu customisations are at the host&apos;s own risk (
+        <Link href="/terms-and-conditions" className="underline underline-offset-2">
+          Terms
+        </Link>
+        ). Images for representation only.
+      </p>
 
-              <p className="font-hand text-xl text-kumkum">you&apos;re invited to celebrate at</p>
-              <h2 className="font-display mt-3 text-4xl font-semibold leading-tight text-teal-ink sm:text-5xl">
-                The Sahasra
-                <br />
+      <div className="relative mx-auto flex h-full max-w-7xl items-center justify-center px-4 pb-8 pt-14 sm:px-6 lg:justify-end lg:px-8 lg:pr-16 lg:pt-16">
+        <div className="max-h-full w-full max-w-lg bg-parchment p-2 shadow-2xl sm:p-3">
+          <div className="border-2 border-brass/70 p-1">
+            <div className="relative border border-brass/50 px-5 py-6 text-center sm:px-10 sm:py-[clamp(1.25rem,4dvh,2.5rem)] [@media(max-height:720px)]:py-4">
+              <CornerOrnament className="absolute left-1.5 top-1.5 w-8 text-brass sm:w-10" />
+              <CornerOrnament className="absolute right-1.5 top-1.5 w-8 rotate-90 text-brass sm:w-10" />
+              <CornerOrnament className="absolute bottom-1.5 right-1.5 w-8 rotate-180 text-brass sm:w-10" />
+              <CornerOrnament className="absolute bottom-1.5 left-1.5 w-8 -rotate-90 text-brass sm:w-10" />
+
+              <p className="font-hand text-base text-kumkum sm:text-lg">you&apos;re invited to celebrate at</p>
+              <h2 className="font-display mt-1 text-[clamp(1.8rem,5dvh,3rem)] font-semibold leading-tight text-teal-ink">
+                The Sahasra <br className="hidden sm:block [@media(max-height:720px)]:hidden" />
                 Function Hall
               </h2>
-              <p className="mx-auto mt-5 max-w-sm leading-relaxed text-stone">
-                Birthdays, engagements, naming ceremonies, family reunions, office meets. You bring the people,
-                we bring the cool air and the good food.
+              <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-stone sm:text-base">
+                Birthdays, engagements, naming ceremonies, family reunions, office meets. You bring the people, we
+                bring the cool air and the good food.
               </p>
 
-              <dl className="mt-8 grid grid-cols-2 gap-y-5 border-y border-dashed border-brass/50 py-6">
+              <dl className="mt-4 grid grid-cols-4 gap-1 border-y border-dashed border-brass/50 py-3 [@media(max-height:720px)]:mt-3 [@media(max-height:720px)]:py-2">
                 {details.map(([v, l]) => (
                   <div key={l}>
-                    <dt className="font-display text-3xl font-semibold text-teal">{v}</dt>
-                    <dd className="mt-1 text-xs leading-snug text-stone">{l}</dd>
+                    <dt className="font-display text-xl font-semibold text-teal sm:text-2xl">{v}</dt>
+                    <dd className="mt-0.5 text-[0.65rem] leading-tight text-stone sm:text-xs">{l}</dd>
                   </div>
                 ))}
               </dl>
 
-              <p className="font-hand mt-7 text-lg text-ink/70">kindly RSVP, we&apos;d love to host you</p>
-              <div className="mt-3 flex flex-col justify-center gap-3 sm:flex-row">
+              <p className="font-hand mt-4 text-base text-ink/70 [@media(max-height:720px)]:mt-2">kindly RSVP, we&apos;d love to host you</p>
+              <div className="mt-2 flex justify-center gap-2">
                 <a
                   href={site.phoneHref}
-                  className="flex items-center justify-center gap-2 rounded-full bg-teal px-7 py-3.5 font-semibold text-paper shadow-[0_5px_0_0_var(--color-teal-ink)] transition-transform hover:-translate-y-0.5"
+                  className="flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-teal px-4 py-2.5 text-sm font-semibold text-paper shadow-[0_4px_0_0_var(--color-teal-ink)] transition-transform hover:-translate-y-0.5 sm:px-6"
                 >
                   <FiPhone aria-hidden /> Book your date
                 </a>
@@ -83,18 +80,11 @@ export default function FunctionHall() {
                   href={site.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-full border-2 border-teal-ink/80 px-7 py-3 font-semibold text-teal-ink transition-colors hover:bg-teal-ink hover:text-paper"
+                  className="flex items-center justify-center gap-2 whitespace-nowrap rounded-full border-2 border-teal-ink/80 px-4 py-2 text-sm font-semibold text-teal-ink transition-colors hover:bg-teal-ink hover:text-paper sm:px-5"
                 >
                   <FaWhatsapp aria-hidden /> WhatsApp
                 </a>
               </div>
-              <p className="mt-7 text-xs leading-relaxed text-stone/80">
-                Decor and menu customisations are arranged on request and at the host&apos;s own risk. See our{" "}
-                <Link href="/terms-and-conditions" className="underline underline-offset-2">
-                  Terms and Conditions
-                </Link>
-                .
-              </p>
             </div>
           </div>
         </div>

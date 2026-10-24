@@ -23,7 +23,20 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 6rem;
+  scroll-padding-top: 4.5rem;
+}
+
+/* Home page: every section is exactly one screen under the 4.5rem header, and scrolling snaps between them. */
+.screen {
+  height: max(32rem, calc(100dvh - 4.5rem));
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+html:has(.screen) {
+  scroll-snap-type: y mandatory;
+}
+html:has(.screen) footer {
+  scroll-snap-align: end;
 }
 
 body {

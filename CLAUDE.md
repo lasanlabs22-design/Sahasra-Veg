@@ -13,6 +13,7 @@ Website for **Sahasra Pure Veg**, a new pure vegetarian restaurant (client proje
 - Brand colors: teal `#127089`, gold `#D4A04A`, plus ink `#0B1F24` and ivory `#FAF6EE`. Tokens live in `src/app/globals.css`.
 - All client details used on the site come from `src/lib/site.ts`. Keep it in sync with the list below.
 - Photos are free-licence stock (Pexels, plus Wikimedia Commons where Pexels has no accurate shot, such as pesarattu and ven pongal), registered with credits in `src/lib/photos.ts` and listed on `/photo-credits`. Never use Pinterest or other copyrighted images. Any new photo must be checked by eye as vegetarian and Indian, and added there with its licence. They are placeholders until the client's own photography arrives.
+- Layout: everything lives on the home page. Each section is exactly one screen (`.screen` in globals.css) and scrolling snaps between them. On phones, sections with more content use `Panels` (swipe sideways). Any change must still pass the fit check: no content clipped at 1366x657, 1280x720, 1440x900, 390x664 and 390x844.
 - Hours: open every day 6 AM to 10 PM; breakfast, lunch and dinner. Dinner serves the same menu (meals). Stored in `site.hours`.
 - Site copy must not use em or en dashes, and must not invent facts (hours, prices, dishes) the client has not given.
 - Copy is English only (no Telugu on the site) and written in a warm, playful voice, not generic restaurant filler.

@@ -7,6 +7,8 @@ import { menuPages } from "@/components/home/MenuPages";
 
 const N = menuPages.length;
 const TURN_MS = 900;
+// The book is laid out at this size, then scaled to fit the screen.
+const DIM = { spread: { w: 1056, h: 680 }, single: { w: 440, h: 660 } };
 
 function useMedia(query: string, serverValue: boolean) {
   return useSyncExternalStore(
@@ -32,7 +34,10 @@ export default function MenuBook() {
   const reduced = useMedia("(prefers-reduced-motion: reduce)", false);
   const [state, setState] = useState({ at: 0, twoUp: true });
   const [flip, setFlip] = useState<Flip | null>(null);
+  const [scale, setScale] = useState(1);
+  const areaRef = useRef<HTMLDivElement>(null);
   const touchX = useRef<number | null>(null);
+  const dim = twoUp ? DIM.spread : DIM.single;
 
   // Keep the open page when switching between spread and single-page layouts.
   let at = state.at;
@@ -40,6 +45,16 @@ export default function MenuBook() {
     at = twoUp ? Math.ceil(state.at / 2) : Math.max(0, state.at * 2 - 1);
     setState({ at, twoUp });
   }
+
+  useEffect(() => {
+    const el = areaRef.current;
+    if (!el) return;
+    const fit = () => setScale(Math.min(el.clientWidth / dim.w, el.clientHeight / dim.h, 1.25));
+    fit();
+    const ro = new ResizeObserver(fit);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [dim.w, dim.h]);
 
   const last = twoUp ? Math.ceil((N - 1) / 2) : N - 1;
 
@@ -95,20 +110,16 @@ export default function MenuBook() {
   const activeTab = menuPages.reduce((acc, p, i) => (p.tab && i <= Math.max(shownPage, 1) ? i : acc), 1);
 
   return (
-    <section id="menu" className="relative overflow-hidden bg-teal-ink py-24 text-paper lg:py-32">
+    <section id="menu" className="screen relative flex flex-col overflow-hidden bg-teal-ink text-paper">
       <Kolam className="pointer-events-none absolute left-1/2 top-1/2 w-[70rem] -translate-x-1/2 -translate-y-1/2 text-white/[0.04]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_45%,rgba(242,184,71,0.16),transparent_70%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_50%,rgba(242,184,71,0.16),transparent_70%)]" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="reveal text-center">
-          <p className="font-hand text-xl text-turmeric">go on, open it</p>
-          <h2 className="font-display text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">Our Menu</h2>
-          <p className="mx-auto mt-4 max-w-md text-paper/70">
-            Tap a page or swipe to turn it. Fair warning: you will get hungry.
-          </p>
+      <div className="relative mx-auto flex w-full max-w-7xl shrink-0 flex-wrap items-end justify-between gap-x-6 gap-y-2 px-4 pt-[clamp(0.75rem,3dvh,2rem)] sm:px-6 lg:px-8">
+        <div>
+          <p className="font-hand text-lg text-turmeric">go on, open it</p>
+          <h2 className="font-display text-[clamp(1.9rem,5.5dvh,3.5rem)] leading-none font-semibold tracking-tight">Our Menu</h2>
         </div>
-
-        <div className="mt-10 flex flex-wrap justify-center gap-2" role="tablist" aria-label="Menu sections">
+        <div className="flex flex-wrap gap-2" role="tablist" aria-label="Menu sections">
           {menuPages.map((p, i) =>
             p.tab ? (
               <button
@@ -117,7 +128,7 @@ export default function MenuBook() {
                 role="tab"
                 aria-selected={activeTab === i && at > 0}
                 onClick={() => jump(i)}
-                className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
+                className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
                   activeTab === i && at > 0 ? "bg-turmeric text-teal-ink" : "bg-paper/10 text-paper hover:bg-paper/20"
                 }`}
               >
@@ -126,9 +137,12 @@ export default function MenuBook() {
             ) : null,
           )}
         </div>
+      </div>
 
+      <div ref={areaRef} className="relative mx-4 my-[clamp(0.5rem,2.5dvh,1.5rem)] min-h-0 flex-1">
         <div
-          className="relative mx-auto mt-10 h-[640px] w-full max-w-[26rem] select-none [perspective:2400px] sm:h-[700px] sm:max-w-[30rem] lg:h-[680px] lg:max-w-[66rem]"
+          className="absolute left-1/2 top-1/2 select-none [perspective:2400px]"
+          style={{ width: dim.w, height: dim.h, transform: `translate(-50%, -50%) scale(${scale})` }}
           role="region"
           aria-roledescription="book"
           aria-label="Sahasra menu"
@@ -149,10 +163,9 @@ export default function MenuBook() {
             className="absolute inset-0 transition-transform duration-700 ease-out"
             style={{ transform: closed ? "translateX(-25%)" : undefined }}
           >
-            {/* Book block shadow */}
             <div
               className={`pointer-events-none absolute inset-y-2 rounded-lg shadow-[0_50px_80px_-30px_rgba(0,0,0,0.8)] ${
-                twoUp ? (closed ? "left-1/2 right-0" : "inset-x-0") : "inset-x-0"
+                closed ? "left-1/2 right-0" : "inset-x-0"
               }`}
               aria-hidden
             />
@@ -196,30 +209,30 @@ export default function MenuBook() {
             )}
           </div>
         </div>
+      </div>
 
-        <div className="mt-10 flex items-center justify-center gap-6">
-          <button
-            type="button"
-            onClick={() => turn(-1)}
-            disabled={at === 0}
-            aria-label="Previous page"
-            className="grid size-12 place-items-center rounded-full border border-paper/30 transition-colors hover:bg-paper hover:text-teal-ink disabled:pointer-events-none disabled:opacity-30"
-          >
-            <FiChevronLeft size={22} />
-          </button>
-          <p className="font-hand min-w-36 text-center text-lg text-paper/80" aria-live="polite">
-            {at === 0 ? "the cover" : at === last ? "the back cover" : twoUp ? `pages ${at * 2 - 1} & ${at * 2}` : `page ${at}`}
-          </p>
-          <button
-            type="button"
-            onClick={() => turn(1)}
-            disabled={at === last}
-            aria-label="Next page"
-            className="grid size-12 place-items-center rounded-full bg-turmeric text-teal-ink transition-transform hover:scale-105 disabled:pointer-events-none disabled:opacity-30"
-          >
-            <FiChevronRight size={22} />
-          </button>
-        </div>
+      <div className="relative flex shrink-0 items-center justify-center gap-6 pb-[clamp(0.5rem,2.5dvh,1.5rem)]">
+        <button
+          type="button"
+          onClick={() => turn(-1)}
+          disabled={at === 0}
+          aria-label="Previous page"
+          className="grid size-10 place-items-center rounded-full border border-paper/30 transition-colors hover:bg-paper hover:text-teal-ink disabled:pointer-events-none disabled:opacity-30"
+        >
+          <FiChevronLeft size={20} />
+        </button>
+        <p className="font-hand min-w-40 text-center text-base text-paper/80" aria-live="polite">
+          {at === 0 ? "tap the cover to open" : at === last ? "the back cover" : twoUp ? `pages ${at * 2 - 1} & ${at * 2}` : `page ${at}`}
+        </p>
+        <button
+          type="button"
+          onClick={() => turn(1)}
+          disabled={at === last}
+          aria-label="Next page"
+          className="grid size-10 place-items-center rounded-full bg-turmeric text-teal-ink transition-transform hover:scale-105 disabled:pointer-events-none disabled:opacity-30"
+        >
+          <FiChevronRight size={20} />
+        </button>
       </div>
     </section>
   );

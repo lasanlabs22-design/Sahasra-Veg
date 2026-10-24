@@ -19,7 +19,7 @@ export function Thoranam({ count = 45, className = "" }: { count?: number; class
   // Matches the quadratic string below: y(t) = 4 + 128 t (1 - t), in px because the SVG is 40px tall.
   const sag = (t: number) => 2 + 128 * t * (1 - t);
   return (
-    <div className={`pointer-events-none relative h-24 w-full sm:h-28 ${className}`} aria-hidden>
+    <div className={`pointer-events-none relative h-20 w-full sm:h-24 ${className}`} aria-hidden>
       <svg viewBox="0 0 1000 40" preserveAspectRatio="none" className="absolute inset-x-0 top-0 h-10 w-full">
         <path d="M0 4 Q500 68 1000 4" fill="none" stroke="#7a5320" strokeWidth="2" vectorEffect="non-scaling-stroke" />
       </svg>
@@ -39,7 +39,7 @@ export function Thoranam({ count = 45, className = "" }: { count?: number; class
             }}
           >
             {flower ? (
-              <svg viewBox="0 0 24 40" className="h-8 w-5 sm:h-10 sm:w-6">
+              <svg viewBox="0 0 24 40" className="h-7 w-4 sm:h-8 sm:w-5">
                 <line x1="12" y1="0" x2="12" y2="14" stroke="#7a5320" strokeWidth="1.2" />
                 {range(10).map((p) => (
                   <circle
@@ -54,7 +54,7 @@ export function Thoranam({ count = 45, className = "" }: { count?: number; class
                 <circle cx="12" cy="24" r="2" fill="#b85a0c" />
               </svg>
             ) : (
-              <svg viewBox="0 0 22 72" className="h-14 w-4 sm:h-[4.5rem] sm:w-[1.1rem]">
+              <svg viewBox="0 0 22 72" className="h-12 w-3.5 sm:h-14 sm:w-4">
                 <path
                   d="M11 2 C20 16 20 46 11 70 C2 46 2 16 11 2 Z"
                   fill={i % 2 ? "#3c7a35" : "#2f6b35"}
@@ -261,7 +261,8 @@ export function Skyline({ className = "" }: { className?: string }) {
 }
 
 /* Illustrated map: Chittoor where Andhra Pradesh meets Tamil Nadu and Karnataka. */
-export function RegionMap({ className = "" }: { className?: string }) {
+export function RegionMap({ className = "", labelScale = 1 }: { className?: string; labelScale?: number }) {
+  const f = (n: number) => n * labelScale;
   // Equirectangular projection of real coordinates into a 600 x 230 box.
   const p = (lat: number, lon: number) => [(lon - 77.4) * 200, (13.9 - lat) * 200 + 6] as const;
   const home = p(13.2175, 79.1003);
@@ -275,7 +276,7 @@ export function RegionMap({ className = "" }: { className?: string }) {
   ] as const;
   return (
     <svg viewBox="0 0 600 240" className={className} role="img" aria-label="Map showing Chittoor between Bengaluru, Tirupati, Vellore and Chennai">
-      <g fontFamily="var(--font-instrument)" fontSize="11" letterSpacing="5" fill="#9a6b1f" opacity="0.55" fontWeight="600">
+      <g fontFamily="var(--font-instrument)" fontSize={f(11)} letterSpacing="5" fill="#9a6b1f" opacity="0.55" fontWeight="600">
         <text x="40" y="60">KARNATAKA</text>
         <text x="300" y="22">ANDHRA PRADESH</text>
         <text x="420" y="228">TAMIL NADU</text>
@@ -303,7 +304,7 @@ export function RegionMap({ className = "" }: { className?: string }) {
                 y={ly}
                 textAnchor="middle"
                 fontFamily="var(--font-kalam)"
-                fontSize="12"
+                fontSize={f(12)}
                 fill="#5a5250"
                 stroke="#fbf4e6"
                 strokeWidth="4"
@@ -315,10 +316,10 @@ export function RegionMap({ className = "" }: { className?: string }) {
             <circle cx={x} cy={y} r="4.5" fill="#fbf4e6" stroke="#127089" strokeWidth="2" />
             <text
               x={x + pl.dx}
-              y={y + pl.dy}
+              y={y + f(pl.dy)}
               textAnchor={pl.anchor}
               fontFamily="var(--font-kalam)"
-              fontSize="15"
+              fontSize={f(15)}
               fill="#0d4b5b"
               stroke="#fbf4e6"
               strokeWidth="4"
@@ -333,10 +334,10 @@ export function RegionMap({ className = "" }: { className?: string }) {
       <circle cx={home[0]} cy={home[1]} r="7" fill="#b23a2a" stroke="#fbf4e6" strokeWidth="2.5" />
       <text
         x={home[0] + 14}
-        y={home[1] + 30}
+        y={home[1] + f(30)}
         textAnchor="start"
         fontFamily="var(--font-fraunces)"
-        fontSize="17"
+        fontSize={f(17)}
         fontWeight="600"
         fill="#b23a2a"
         stroke="#fbf4e6"
