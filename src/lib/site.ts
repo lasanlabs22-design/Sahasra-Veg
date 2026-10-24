@@ -29,11 +29,12 @@ export const site = {
 
 export const fullAddress = `${site.address.street}, ${site.address.city}, ${site.address.state} ${site.address.pin}`;
 
+// Each section of the site is its own page, in this order.
 export const nav = [
-  { href: "/#menu", label: "Menu" },
-  { href: "/#story", label: "Our Story" },
-  { href: "/#dining", label: "Dining" },
-  { href: "/#hall", label: "Function Hall" },
-  { href: "/#catering", label: "Catering" },
-  { href: "/#visit", label: "Visit" },
+  { href: "/menu", label: "Menu" },
+  { href: "/our-story", label: "Our Story" },
+  { href: "/dining", label: "Dining" },
+  { href: "/function-hall", label: "Function Hall" },
+  { href: "/catering", label: "Catering" },
+  { href: "/visit", label: "Visit" },
 ] as const;

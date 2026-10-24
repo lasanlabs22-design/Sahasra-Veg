@@ -42,7 +42,7 @@ export default function Hero() {
             </p>
             <div className="rise mt-9 flex flex-wrap items-center gap-4" style={{ animationDelay: "300ms" }}>
               <a
-                href="#menu"
+                href="/menu"
                 className="group rounded-full bg-teal px-8 py-4 font-semibold text-paper shadow-[0_6px_0_0_var(--color-teal-ink)] transition-transform hover:-translate-y-0.5"
               >
                 Flip through the menu{" "}

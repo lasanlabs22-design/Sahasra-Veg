@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FiClock, FiMapPin, FiMenu, FiPhone, FiX } from "react-icons/fi";
 import logo from "@/assets/brand/logo.png";
@@ -10,6 +11,7 @@ import { nav, site } from "@/lib/site";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -49,7 +51,8 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="relative py-2 text-[0.95rem] font-medium text-teal-ink after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-turmeric after:transition-transform hover:after:scale-x-100"
+                aria-current={pathname === item.href ? "page" : undefined}
+                className="relative py-2 text-[0.95rem] font-medium text-teal-ink after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-turmeric after:transition-transform hover:after:scale-x-100 aria-[current=page]:font-semibold aria-[current=page]:after:scale-x-100"
               >
                 {item.label}
               </Link>
@@ -86,9 +89,12 @@ export default function Header() {
                   <Link
                     href={item.href}
                     onClick={() => setOpen(false)}
-                    className="flex items-baseline justify-between border-b border-dashed border-brass/30 py-4"
+                    aria-current={pathname === item.href ? "page" : undefined}
+                    className="group flex items-baseline justify-between border-b border-dashed border-brass/30 py-4"
                   >
-                    <span className="font-display text-3xl font-semibold text-teal-ink">{item.label}</span>
+                    <span className="font-display text-3xl font-semibold text-teal-ink group-aria-[current=page]:text-kumkum">
+                      {item.label}
+                    </span>
                     <span className="text-brass" aria-hidden>→</span>
                   </Link>
                 </li>
