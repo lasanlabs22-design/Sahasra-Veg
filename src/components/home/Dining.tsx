@@ -22,7 +22,7 @@ export default function Dining() {
   return (
     <section id="dining" className="screen bg-paper">
       <div className="mx-auto flex h-full max-w-7xl flex-col px-4 py-[clamp(1rem,4svh,3rem)] max-lg:py-12 sm:px-6 lg:px-8">
-        <Heading kicker="so, what's the plan today?" title="Quick bite or long dinner?" align="center" className="shrink-0" />
+        <Heading kicker="So, what's the plan today?" title="Quick bite or long dinner?" align="center" className="shrink-0" />
         <div className="mt-[clamp(0.75rem,3svh,2.5rem)] flex min-h-0 flex-1 flex-col">
           <Panels labels={ways.map((w) => w.title)} className="lg:grid lg:grid-cols-2 lg:grid-rows-[minmax(0,1fr)] lg:gap-5">
             {ways.map((w) => (

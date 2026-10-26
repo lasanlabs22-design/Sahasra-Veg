@@ -42,7 +42,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h2 className="font-hand text-xl text-turmeric">explore</h2>
+            <h2 className="font-hand text-xl text-turmeric">Explore</h2>
             <ul className="mt-4 space-y-2.5">
               {nav.map((item) => (
                 <li key={item.href}>
@@ -55,7 +55,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h2 className="font-hand text-xl text-turmeric">say hello</h2>
+            <h2 className="font-hand text-xl text-turmeric">Say hello</h2>
             <ul className="mt-4 space-y-4 text-sm">
               <li className="flex gap-3">
                 <FiClock className="mt-1 shrink-0 text-turmeric" aria-hidden />
@@ -87,7 +87,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h2 className="font-hand text-xl text-turmeric">the fine print</h2>
+            <h2 className="font-hand text-xl text-turmeric">The fine print</h2>
             <ul className="mt-4 space-y-2.5">
               <li>
                 <Link href="/privacy-policy" className="hover:text-turmeric">

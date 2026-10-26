@@ -13,7 +13,7 @@ export default function LegalPage({
     <>
       <div className="bg-parchment pb-14 text-center">
         <Thoranam />
-        <p className="font-hand text-xl text-kumkum">the fine print</p>
+        <p className="font-hand text-xl text-kumkum">The fine print</p>
         <h1 className="font-display mt-2 px-4 text-4xl font-semibold tracking-tight text-teal-ink sm:text-6xl">{title}</h1>
         <p className="mt-4 text-sm text-stone">Last updated: {updated}</p>
       </div>
