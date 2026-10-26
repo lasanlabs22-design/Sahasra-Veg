@@ -16,7 +16,7 @@ export default function Catering() {
         </div>
 
         <div>
-          <Heading kicker="can't come to us?" title="We'll come to you." />
+          <Heading kicker="Can't come to us?" title="We'll come to you." />
           <p className="mt-4 max-w-xl text-[0.95rem] leading-relaxed text-stone sm:text-lg">
             Big fat wedding or a cosy housewarming, tell us the date and the headcount and we will bring
             Sahasra&apos;s kitchen to your celebration. No forms, no waiting. One call and it is sorted.
@@ -30,7 +30,7 @@ export default function Catering() {
           </ul>
 
           <div className="mt-[clamp(1rem,3svh,2rem)] rounded-[1.75rem] bg-teal-ink p-5 text-paper sm:p-7">
-            <p className="font-hand text-base text-turmeric sm:text-lg">one call is all it takes</p>
+            <p className="font-hand text-base text-turmeric sm:text-lg">One call is all it takes</p>
             <a href={site.phoneHref} className="font-display block text-3xl font-semibold tracking-tight hover:text-turmeric sm:text-5xl">
               {site.phoneDisplay}
             </a>

@@ -17,7 +17,7 @@ export default function Visit() {
   return (
     <section id="visit" className="screen relative overflow-hidden bg-parchment">
       <div className="mx-auto flex h-full max-w-7xl flex-col px-4 py-[clamp(1rem,4svh,3rem)] max-lg:py-12 sm:px-6 lg:px-8">
-        <Heading kicker="find us" title="Come, sit, eat." className="shrink-0" />
+        <Heading kicker="Find us" title="Come, sit, eat." className="shrink-0" />
 
         <div className="mt-[clamp(0.75rem,3svh,2.5rem)] flex min-h-0 flex-1 flex-col">
           <Panels
@@ -48,7 +48,7 @@ export default function Visit() {
 
               <div className="relative p-4 sm:p-6">
                 <div className="flex items-start justify-between gap-4">
-                  <p className="font-hand text-base text-kumkum sm:text-lg">wish you were here!</p>
+                  <p className="font-hand text-base text-kumkum sm:text-lg">Wish you were here!</p>
                   <div className="relative shrink-0">
                     <div className="rotate-3 border-4 border-dotted border-paper bg-paper p-1 shadow ring-1 ring-brass/40">
                       <Image src={logo} alt="" className="h-auto w-14 sm:w-20" />
@@ -72,7 +72,7 @@ export default function Visit() {
                     </p>
                   ))}
                 </address>
-                <p className="font-hand mt-3 text-base text-kumkum sm:text-lg">open every day, {site.hours.display}</p>
+                <p className="font-hand mt-3 text-base text-kumkum sm:text-lg">Open every day, {site.hours.display}</p>
                 <p className="mt-1 text-sm text-stone">
                   <a href={site.phoneHref} className="font-semibold text-teal-ink hover:text-teal">
                     {site.phoneDisplay}

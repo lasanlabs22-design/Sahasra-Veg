@@ -116,7 +116,7 @@ export default function MenuBook() {
 
       <div className="relative mx-auto flex w-full max-w-7xl shrink-0 flex-wrap items-end justify-between gap-x-6 gap-y-2 px-4 pt-[clamp(0.75rem,3svh,2rem)] sm:px-6 lg:px-8">
         <div>
-          <p className="font-hand text-lg text-turmeric">go on, open it</p>
+          <p className="font-hand text-lg text-turmeric">Go on, open it</p>
           <h2 className="font-display text-[clamp(1.9rem,5.5svh,3.5rem)] leading-none font-semibold tracking-tight">Our Menu</h2>
         </div>
         <div className="flex flex-wrap gap-2" role="tablist" aria-label="Menu sections">
@@ -223,7 +223,7 @@ export default function MenuBook() {
           <FiChevronLeft size={20} />
         </button>
         <p className="font-hand min-w-40 text-center text-base text-paper/80" aria-live="polite">
-          {at === 0 ? "tap the cover to open" : at === last ? "the back cover" : twoUp ? `pages ${at * 2 - 1} & ${at * 2}` : `page ${at}`}
+          {at === 0 ? "Tap the cover to open" : at === last ? "The back cover" : twoUp ? `Pages ${at * 2 - 1} & ${at * 2}` : `Page ${at}`}
         </p>
         <button
           type="button"

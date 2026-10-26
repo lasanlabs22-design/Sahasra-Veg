@@ -7,10 +7,10 @@ import { photos } from "@/lib/photos";
 import { site } from "@/lib/site";
 
 const details = [
-  ["75", "guests seated"],
-  ["AC", "air-conditioned"],
-  ["Veg", "menus from our kitchen"],
-  ["Custom", "decor and menu"],
+  ["75", "Guests seated"],
+  ["AC", "Air-conditioned"],
+  ["Veg", "Menus from our kitchen"],
+  ["Custom", "Decor and menu"],
 ];
 
 export default function FunctionHall() {
@@ -30,7 +30,7 @@ export default function FunctionHall() {
         <div className="relative aspect-[4/5] overflow-hidden">
           <Image src={photos.hallDecor.src} alt={photos.hallDecor.alt} fill placeholder="blur" sizes="15rem" className="object-cover" />
         </div>
-        <figcaption className="font-hand mt-2 text-center text-base leading-tight text-kumkum">marigolds, banana leaves, the works</figcaption>
+        <figcaption className="font-hand mt-2 text-center text-base leading-tight text-kumkum">Marigolds, banana leaves, the works</figcaption>
       </figure>
       <p className="absolute inset-x-4 bottom-2 text-center text-[0.65rem] leading-snug text-paper/80 lg:left-auto lg:right-8 lg:text-right">
         Decor and menu customisations are at the host&apos;s own risk (
@@ -49,7 +49,7 @@ export default function FunctionHall() {
               <CornerOrnament className="absolute bottom-1.5 right-1.5 w-8 rotate-180 text-brass sm:w-10" />
               <CornerOrnament className="absolute bottom-1.5 left-1.5 w-8 -rotate-90 text-brass sm:w-10" />
 
-              <p className="font-hand text-base text-kumkum sm:text-lg">you&apos;re invited to celebrate at</p>
+              <p className="font-hand text-base text-kumkum sm:text-lg">You&apos;re invited to celebrate at</p>
               <h2 className="font-display mt-1 text-[clamp(1.8rem,5svh,3rem)] font-semibold leading-tight text-teal-ink">
                 The Sahasra <br className="hidden sm:block [@media(max-height:720px)]:hidden" />
                 Function Hall
@@ -68,7 +68,7 @@ export default function FunctionHall() {
                 ))}
               </dl>
 
-              <p className="font-hand mt-4 text-base text-ink/70 [@media(max-height:720px)]:mt-2">kindly RSVP, we&apos;d love to host you</p>
+              <p className="font-hand mt-4 text-base text-ink/70 [@media(max-height:720px)]:mt-2">Kindly RSVP, we&apos;d love to host you</p>
               <div className="mt-2 flex justify-center gap-2">
                 <a
                   href={site.phoneHref}

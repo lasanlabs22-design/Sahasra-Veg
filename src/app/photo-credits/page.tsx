@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function PhotoCredits() {
   return (
-    <LegalPage title="Photo Credits" updated="23 October 2026">
+    <LegalPage title="Photo Credits" updated="26 October 2026">
       <p>
         The photographs on this website come from Pexels and Wikimedia Commons and are used under the free
         licences listed below. They have been resized for the web. They are for representation only and do not

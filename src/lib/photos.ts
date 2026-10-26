@@ -1,18 +1,26 @@
 import type { StaticImageData } from "next/image";
+import bajji from "@/assets/photos/bajji.jpg";
 import benneDosa from "@/assets/photos/benne-dosa.jpg";
+import chaat from "@/assets/photos/chaat.jpg";
 import chandragiri from "@/assets/photos/chandragiri.jpg";
+import coffee from "@/assets/photos/coffee.jpg";
 import dosa from "@/assets/photos/dosa.jpg";
 import fineDining from "@/assets/photos/fine-dining.jpg";
 import functionHall from "@/assets/photos/function-hall.jpg";
 import hallDecor from "@/assets/photos/hall-decor.jpg";
 import heroDosa from "@/assets/photos/hero-masala-dosa.jpg";
+import iceCream from "@/assets/photos/ice-cream.jpg";
 import idli from "@/assets/photos/idli.jpg";
 import kalamkari from "@/assets/photos/kalamkari.jpg";
 import northThali from "@/assets/photos/north-indian-thali.jpg";
 import pesarattu from "@/assets/photos/pesarattu.jpg";
 import pongal from "@/assets/photos/pongal.jpg";
+import punugulu from "@/assets/photos/punugulu.jpg";
+import savouries from "@/assets/photos/savouries.jpg";
 import selfService from "@/assets/photos/self-service.jpg";
 import southMeals from "@/assets/photos/south-indian-meals.jpg";
+import sweets from "@/assets/photos/sweets.jpg";
+import tea from "@/assets/photos/tea.jpg";
 
 type Photo = {
   src: StaticImageData;
@@ -98,6 +106,86 @@ export const photos = {
     license: "Pexels License (free to use)",
     licenseUrl: "https://www.pexels.com/license/",
     source: "https://www.pexels.com/photo/35008222/",
+  },
+  chaat: {
+    src: chaat,
+    alt: "Crisp pani puri filled with potato, around a bowl of tangy pani",
+    usedFor: "Menu: Chaats",
+    title: "Crispy Pani Puri",
+    author: "Teena Sometimes",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
+    source: "https://commons.wikimedia.org/wiki/File:Crispy_Pani_Puri.jpg",
+  },
+  punugulu: {
+    src: punugulu,
+    alt: "A steel plate piled high with golden punugulu",
+    usedFor: "Menu: Punugulu",
+    title: "Punugulu1",
+    author: "Balajijagadesh",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
+    source: "https://commons.wikimedia.org/wiki/File:Punugulu1.JPG",
+  },
+  bajji: {
+    src: bajji,
+    alt: "A bowl of golden mirchi bajji",
+    usedFor: "Menu: Bajji",
+    title: "Andhra famous mirchi bajji",
+    author: "Bhaskaranaidu",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
+    source: "https://commons.wikimedia.org/wiki/File:Andhra_famous_mirchi_bajji.JPG",
+  },
+  tea: {
+    src: tea,
+    alt: "A cup of milky tea on a saucer with biscuits, cardamom, cloves and ginger",
+    usedFor: "Menu: Tea",
+    title: "Masala Chai",
+    author: "Miansari66",
+    license: "Public domain",
+    licenseUrl: "https://creativecommons.org/publicdomain/mark/1.0/",
+    source: "https://commons.wikimedia.org/wiki/File:Masala_Chai.JPG",
+  },
+  coffee: {
+    src: coffee,
+    alt: "Frothy South Indian filter coffee in a brass tumbler and davara",
+    usedFor: "Menu: Coffee",
+    title: "Filter-Coffee",
+    author: "Triv.rao",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
+    source: "https://commons.wikimedia.org/wiki/File:Filter-Coffee.jpg",
+  },
+  sweets: {
+    src: sweets,
+    alt: "A plate of assorted Indian sweets",
+    usedFor: "Menu: Sweets",
+    title: "(A) plate full of Indian sweets mithai desserts",
+    author: "DDohler",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0",
+    source: "https://commons.wikimedia.org/wiki/File:(A)_plate_full_of_Indian_sweets_mithai_desserts.jpg",
+  },
+  savouries: {
+    src: savouries,
+    alt: "A bowl of crunchy spiral chakli",
+    usedFor: "Menu: Savouries",
+    title: "Chakli in a bowl",
+    author: "PilotChicago",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
+    source: "https://commons.wikimedia.org/wiki/File:Chakli_in_a_bowl.jpg",
+  },
+  iceCream: {
+    src: iceCream,
+    alt: "A scoop of tutti frutti ice cream in a cone",
+    usedFor: "Menu: Ice Creams (cropped)",
+    title: "Tutti fruitti cone ice cream",
+    author: "Nikitha Jotheswari",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
+    source: "https://commons.wikimedia.org/wiki/File:Tutti_fruitti_cone_ice_cream.jpg",
   },
   fineDining: {
     src: fineDining,

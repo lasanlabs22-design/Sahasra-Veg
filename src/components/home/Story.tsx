@@ -20,7 +20,7 @@ export default function Story() {
           ]}
         >
           <div>
-            <Heading kicker="our story" title="Where three states share one table" />
+            <Heading kicker="Our story" title="Where three states share one table" />
             <div className="mt-4 space-y-3 text-[0.95rem] leading-relaxed text-stone sm:text-base lg:text-lg">
               <p>
                 Chittoor sits right where Andhra Pradesh, Tamil Nadu and Karnataka meet, so of course our menu
@@ -44,14 +44,14 @@ export default function Story() {
             </p>
             <ol className="font-display mt-4 space-y-2 text-lg leading-snug text-ink">
               <li>
-                <span className="mr-2 font-semibold text-brass">1.</span>a thousand.
+                <span className="mr-2 font-semibold text-brass">1.</span>A thousand.
               </li>
               <li>
-                <span className="mr-2 font-semibold text-brass">2.</span>the thousand-petalled lotus, an old Indian symbol of
+                <span className="mr-2 font-semibold text-brass">2.</span>The thousand-petalled lotus, an old Indian symbol of
                 purity.
               </li>
               <li>
-                <span className="mr-2 font-semibold text-brass">3.</span>your new favourite pure veg restaurant in Chittoor.
+                <span className="mr-2 font-semibold text-brass">3.</span>Your new favourite pure veg restaurant in Chittoor.
               </li>
             </ol>
             <div className="mt-5 border-t border-dashed border-brass/40 pt-4">
@@ -73,7 +73,7 @@ export default function Story() {
                 <Image src={photos.kalamkari.src} alt={photos.kalamkari.alt} fill sizes="6rem" placeholder="blur" className="object-cover" />
               </div>
               <p className="text-sm text-stone">
-                <span className="font-hand block text-lg text-kumkum">close to home</span>
+                <span className="font-hand block text-lg text-kumkum">Close to home</span>
                 Kanipakam&apos;s temple, Tirupati&apos;s hills, Srikalahasti&apos;s kalamkari and mango orchards
                 everywhere. This is the Chittoor we cook for.
               </p>

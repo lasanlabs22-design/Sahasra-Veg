@@ -95,7 +95,7 @@ function Cover({ back = false }: { back?: boolean }) {
             Pure Vegetarian · Chittoor
           </p>
           <p className="relative mt-2 text-sm text-paper/70">Open daily, 6 AM to 10 PM</p>
-          <p className="font-hand relative mt-8 text-lg text-paper/70">tap to open</p>
+          <p className="font-hand relative mt-8 text-lg text-paper/70">Tap to open</p>
         </>
       )}
     </div>
@@ -103,18 +103,44 @@ function Cover({ back = false }: { back?: boolean }) {
 }
 
 const tiffin = [
-  { name: "Idly", tag: "morning", text: "Steamed so soft, your pillow will get jealous." },
-  { name: "Dosa", tag: "all day", text: "Thin, golden, and it crackles when you tear it." },
-  { name: "Pesarattu", tag: "morning", text: "Andhra's green moong dal dosa. Ginger chutney is non-negotiable." },
-  { name: "Pongal", tag: "morning", text: "Ghee, pepper and cashew. A warm hug on a plate." },
+  { name: "Idly", tag: "Morning", text: "Steamed so soft, your pillow will get jealous." },
+  { name: "Dosa", tag: "All day", text: "Thin, golden, and it crackles when you tear it." },
+  { name: "Pesarattu", tag: "Morning", text: "Andhra's green moong dal dosa. Ginger chutney is non-negotiable." },
+  { name: "Pongal", tag: "Morning", text: "Ghee, pepper and cashew. A warm hug on a plate." },
 ];
 
 const tiffinPlates = [
-  { photo: photos.idli, note: "dunk it in sambar!", tilt: "-rotate-6" },
-  { photo: photos.dosa, note: "hear that crunch?", tilt: "rotate-3" },
+  { photo: photos.idli, note: "Dunk it in sambar!", tilt: "-rotate-6" },
+  { photo: photos.dosa, note: "Hear that crunch?", tilt: "rotate-3" },
   { photo: photos.pesarattu, note: "Andhra's pride", tilt: "rotate-6" },
-  { photo: photos.pongal, note: "ghee-licious", tilt: "-rotate-3" },
+  { photo: photos.pongal, note: "Ghee-licious", tilt: "-rotate-3" },
 ];
+
+const evening = [
+  { name: "Chaats", tag: "Tangy", text: "Crunchy, tangy, sweet and spicy. Every bite is a tiny party." },
+  { name: "Punugulu", tag: "Andhra classic", text: "Crisp golden bites with a soft middle. Nobody stops at one." },
+  { name: "Bajji", tag: "Piping hot", text: "Battered, fried till golden and best eaten too hot to hold." },
+];
+
+const eveningPlates = [
+  { photo: photos.chaat, note: "Pop it whole!", tilt: "-rotate-6" },
+  { photo: photos.punugulu, note: "Just one more", tilt: "rotate-3" },
+  { photo: photos.bajji, note: "Careful, it's hot!", tilt: "rotate-6" },
+];
+
+// Two tilted plates side by side, with handwritten notes.
+function PlatePair({ plates }: { plates: { photo: (typeof photos)[keyof typeof photos]; note: string; tilt: string }[] }) {
+  return (
+    <div className="my-auto grid grid-cols-2 gap-x-4 pt-4">
+      {plates.map((p) => (
+        <figure key={p.note} className="text-center">
+          <Plate src={p.photo.src} alt={p.photo.alt} sizes="12rem" className={`mx-auto w-[88%] ${p.tilt}`} />
+          <figcaption className="font-hand mt-2 text-base leading-tight text-kumkum">{p.note}</figcaption>
+        </figure>
+      ))}
+    </div>
+  );
+}
 
 const notes = [
   "Pure veg, 100% of the time. That is a promise.",
@@ -131,7 +157,7 @@ export const menuPages: { tab?: string; node: (side: Side) => React.ReactNode }[
     tab: "Tiffin",
     node: (side) => (
       <Sheet side={side} folio={1} head="Tiffin">
-        <Title kicker="rise and dine" title="Tiffin" />
+        <Title kicker="Rise and dine" title="Tiffin" />
         <p className="mx-auto mt-3 max-w-xs text-center text-sm leading-relaxed text-stone">
           Steam rising, tawa sizzling, chutneys lined up. Chittoor&apos;s mornings start right here.
         </p>
@@ -162,7 +188,7 @@ export const menuPages: { tab?: string; node: (side: Side) => React.ReactNode }[
     tab: "Dosa",
     node: (side) => (
       <Sheet side={side} folio={3} head="The house signature">
-        <Title kicker="the one everyone talks about" title="Bangalore Benne Dosa" />
+        <Title kicker="The one everyone talks about" title="Bangalore Benne Dosa" />
         <div className="relative mx-auto mt-5 w-[70%] sm:w-[66%]">
           <Plate src={photos.benneDosa.src} alt={photos.benneDosa.alt} sizes="20rem" className="w-full" />
           <RotatingSeal
@@ -182,7 +208,7 @@ export const menuPages: { tab?: string; node: (side: Side) => React.ReactNode }[
   {
     node: (side) => (
       <Sheet side={side} folio={4} head="On the tawa">
-        <Title kicker="dosa o'clock is every o'clock" title="Dosa, all day." />
+        <Title kicker="Dosa o'clock is every o'clock" title="Dosa, all day." />
         <svg viewBox="0 0 320 120" className="mx-auto mt-4 w-[78%]" aria-hidden>
           <path d="M30 98 Q160 -50 290 98" fill="none" stroke="#d4a04a" strokeWidth="2" strokeDasharray="3 7" />
           <line x1="10" y1="104" x2="310" y2="104" stroke="#9a6b1f" strokeOpacity="0.3" />
@@ -205,8 +231,8 @@ export const menuPages: { tab?: string; node: (side: Side) => React.ReactNode }[
           From 6 in the morning to 10 at night, the tawa never cools down. Breakfast, lunch, dinner or a sneaky 4 PM craving.
         </p>
         <ul className="mt-6 space-y-4">
-          <Item name="Benne Dosa" tag="signature" text="The butter-crowned star of the house." />
-          <Item name="Dosa" tag="all day" text="The classic. Crisp, never boring." />
+          <Item name="Benne Dosa" tag="Signature" text="The butter-crowned star of the house." />
+          <Item name="Dosa" tag="All day" text="The classic. Crisp, never boring." />
           <Item name="Pesarattu" tag="Andhra special" text="Green, wholesome, proudly Andhra." />
         </ul>
       </Sheet>
@@ -216,7 +242,7 @@ export const menuPages: { tab?: string; node: (side: Side) => React.ReactNode }[
     tab: "Meals",
     node: (side) => (
       <Sheet side={side} folio={5} head="Meals">
-        <Title kicker="lunch & dinner, the proper way" title="South Indian Meals" />
+        <Title kicker="Lunch & dinner, the proper way" title="South Indian Meals" />
         <div className="relative mx-auto mt-6 aspect-[4/3] w-full overflow-hidden rounded-lg shadow-lg ring-[6px] ring-white">
           <Image
             src={photos.southMeals.src}
@@ -227,7 +253,7 @@ export const menuPages: { tab?: string; node: (side: Side) => React.ReactNode }[
             className="object-cover"
           />
         </div>
-        <p className="font-hand mt-5 text-center text-lg text-kumkum">eat with your hands. it tastes better, promise.</p>
+        <p className="font-hand mt-5 text-center text-lg text-kumkum">Eat with your hands. It tastes better, promise.</p>
         <p className="mt-1 text-center text-sm leading-relaxed text-stone">
           Rice · Sambar · Rasam · Curries · Chutneys · Papad · Curd
         </p>
@@ -237,7 +263,7 @@ export const menuPages: { tab?: string; node: (side: Side) => React.ReactNode }[
   {
     node: (side) => (
       <Sheet side={side} folio={6} head="Meals">
-        <Title kicker="craving rotis?" title="North Indian Meals" />
+        <Title kicker="Craving rotis?" title="North Indian Meals" />
         <Plate
           src={photos.northThali.src}
           alt={photos.northThali.alt}
@@ -245,7 +271,7 @@ export const menuPages: { tab?: string; node: (side: Side) => React.ReactNode }[
           sizes="18rem"
           className="mx-auto mt-6 w-[60%]"
         />
-        <p className="font-hand mt-5 text-center text-lg text-kumkum">from dal to dessert, all on one plate</p>
+        <p className="font-hand mt-5 text-center text-lg text-kumkum">From dal to dessert, all on one plate</p>
         <p className="mt-1 text-center text-sm leading-relaxed text-stone">
           Rotis · Dal · Seasonal sabzi · Rice · Raita · A sweet
         </p>
@@ -254,10 +280,83 @@ export const menuPages: { tab?: string; node: (side: Side) => React.ReactNode }[
     ),
   },
   {
+    tab: "Evening",
+    node: (side) => (
+      <Sheet side={side} folio={7} head="Evening specials">
+        <Title kicker="Snack o'clock" title="Evening Specials" />
+        <ul className="mt-5 space-y-3">
+          {evening.map((e) => (
+            <Item key={e.name} {...e} />
+          ))}
+        </ul>
+        <div className="mt-auto grid grid-cols-3 gap-x-3 pb-2">
+          {eveningPlates.map((p) => (
+            <figure key={p.note} className="text-center">
+              <Plate src={p.photo.src} alt={p.photo.alt} sizes="9rem" className={`mx-auto w-[92%] ${p.tilt}`} />
+              <figcaption className="font-hand mt-2 text-sm leading-tight text-kumkum">{p.note}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </Sheet>
+    ),
+  },
+  {
+    node: (side) => (
+      <Sheet side={side} folio={8} head="Evening specials">
+        <Title kicker="Bajji's best friend" title="Tea / Coffee" />
+        <p className="mx-auto mt-3 max-w-xs text-center text-sm leading-relaxed text-stone">
+          A hot cup makes every snack taste better. Pull up a chair, blow on it twice, and stay a while.
+        </p>
+        <PlatePair
+          plates={[
+            { photo: photos.tea, note: "Sip, sip, hooray!", tilt: "-rotate-3" },
+            { photo: photos.coffee, note: "Froth on top, please", tilt: "rotate-6" },
+          ]}
+        />
+        <Kolam className="pointer-events-none absolute -bottom-24 -left-24 w-64 text-turmeric/40" />
+      </Sheet>
+    ),
+  },
+  {
+    tab: "Sweets",
+    node: (side) => (
+      <Sheet side={side} folio={9} head="Sweets & savouries">
+        <Title kicker="Sweet tooth, meet salty tooth" title="Sweets & Savouries" />
+        <p className="mx-auto mt-3 max-w-xs text-center text-sm leading-relaxed text-stone">
+          Something sweet for every celebration and something crunchy for every chit-chat. Ask our team what&apos;s
+          on the counter today.
+        </p>
+        <PlatePair
+          plates={[
+            { photo: photos.sweets, note: "Save room for these", tilt: "rotate-3" },
+            { photo: photos.savouries, note: "Crunch time!", tilt: "-rotate-6" },
+          ]}
+        />
+      </Sheet>
+    ),
+  },
+  {
+    node: (side) => (
+      <Sheet side={side} folio={10} head="Ice creams">
+        <Title kicker="Brain freeze, guaranteed" title="Ice Creams" />
+        <Plate
+          src={photos.iceCream.src}
+          alt={photos.iceCream.alt}
+          rim="brass"
+          sizes="18rem"
+          className="mx-auto mt-6 w-[56%] rotate-3"
+        />
+        <p className="font-hand mt-5 text-center text-lg text-kumkum">The cool finish after a spicy plate</p>
+        <p className="mt-1 text-center text-sm leading-relaxed text-stone">Pick a scoop. Then pick another.</p>
+        <p className="mb-4 mt-auto text-center text-xs italic text-stone/70">Ask our team for today&apos;s flavours.</p>
+      </Sheet>
+    ),
+  },
+  {
     tab: "Notes",
     node: (side) => (
-      <Sheet side={side} folio={7} head="Good to know">
-        <Title kicker="a few friendly notes" title="Good to know" />
+      <Sheet side={side} folio={11} head="Good to know">
+        <Title kicker="A few friendly notes" title="Good to know" />
         <ul className="mt-7 space-y-4 text-[0.92rem] leading-snug text-ink/85">
           {notes.map((note, i) => (
             <li key={note} className="flex gap-3">
@@ -270,7 +369,7 @@ export const menuPages: { tab?: string; node: (side: Side) => React.ReactNode }[
             </li>
           ))}
         </ul>
-        <p className="font-hand mt-auto text-center text-2xl text-teal">eat to your heart&apos;s content!</p>
+        <p className="font-hand mt-auto text-center text-2xl text-teal">Eat to your heart&apos;s content!</p>
       </Sheet>
     ),
   },
